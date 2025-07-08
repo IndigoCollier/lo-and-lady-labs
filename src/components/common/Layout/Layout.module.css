@@ -1,0 +1,19 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: var(--space-8) 0;
+}
+
+/* Ensure proper spacing for content */
+.main-content > * {
+  margin-bottom: var(--space-6);
+}
+
+.main-content > *:last-child {
+  margin-bottom: 0;
+}
