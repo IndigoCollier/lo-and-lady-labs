@@ -59,3 +59,56 @@
   cursor: not-allowed;
   transform: none !important;
 }
+
+/* Add these new button variants to your existing Button.module.css */
+
+.btn-outline {
+  background-color: transparent;
+  color: #FFFFFF;
+  border: 2px solid #FFFFFF;
+}
+
+.btn-outline:hover {
+  background-color: #FFFFFF;
+  color: #1B365D;
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: #1B365D;
+  border: 2px solid transparent;
+}
+
+.btn-ghost:hover {
+  background-color: rgba(27, 54, 93, 0.1);
+  border-color: #1B365D;
+}
+
+.btn-cta {
+  background: linear-gradient(135deg, #D4AF37 0%, #F4E4BC 100%);
+  color: #1B365D;
+  font-weight: 700;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-cta:hover::before {
+  left: 100%;
+}
+
+.btn-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+}

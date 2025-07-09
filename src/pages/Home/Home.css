@@ -1,0 +1,152 @@
+.home-page {
+  overflow-x: hidden;
+}
+
+.why-choose-section {
+  padding: 6rem 0;
+  background: #FFFFFF;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-icon {
+  width: 48px;
+  height: 48px;
+  color: #D4AF37;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #1B365D;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: #3C4043;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(27, 54, 93, 0.08);
+  transition: all 0.4s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(27, 54, 93, 0.15);
+}
+
+.feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, #4A90E2, #68B684);
+  border-radius: 18px;
+  margin: 0 auto 1.5rem;
+  color: #FFFFFF;
+}
+
+.feature-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.feature-title {
+  color: #1B365D;
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.feature-description {
+  color: #5F6368;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.cta-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #F5E6D3 0%, #FFFFFF 100%);
+  color: #1B365D;
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color:  #1B365D;;
+}
+
+.cta-description {
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+  color: #1B365D;
+  line-height: 1.5;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .why-choose-section {
+    padding: 4rem 0;
+  }
+  
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .feature-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .cta-section {
+    padding: 4rem 0;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}

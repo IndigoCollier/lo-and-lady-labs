@@ -1,5 +1,7 @@
 @import './reset.css';
 @import './variables.css';
+@import './animations.css'; /* Add this line */
+
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -58,4 +60,45 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #1B365D;
   color: #FFFFFF;
   box-shadow: 0 4px 15px rgba(27, 54, 93, 0.3);
+}
+
+/* Add these responsive utilities to your existing global.css */
+
+/* Container responsive padding */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Typography responsive scaling */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem !important;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem !important;
+  }
+}
+
+/* Touch-friendly button sizing */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 48px;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Improved spacing on mobile */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0 !important;
+  }
 }
