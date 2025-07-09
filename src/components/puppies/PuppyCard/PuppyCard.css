@@ -1,0 +1,356 @@
+.puppy-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(27, 54, 93, 0.1);
+  transition: all 0.4s ease;
+  cursor: pointer;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  /* CRITICAL FIX: Ensure card is always visible */
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.puppy-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(27, 54, 93, 0.15);
+  /* REMOVED: Any opacity or visibility changes that could hide the card */
+}
+
+.puppy-card.compact {
+  max-width: 300px;
+}
+
+.puppy-card.large {
+  max-width: 450px;
+}
+
+.puppy-image-container {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #F8F9FA;
+}
+
+.puppy-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  /* FIXED: Only transform on transition, no opacity changes */
+}
+
+.puppy-image.loading {
+  opacity: 0;
+}
+
+.puppy-image.loaded {
+  opacity: 1;
+}
+
+/* SIMPLIFIED: Only scale the image, don't affect card visibility */
+.puppy-card:hover .puppy-image.loaded {
+  transform: scale(1.05);
+}
+
+.image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #F8F9FA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.placeholder-shimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #F8F9FA 25%, #E8EAED 50%, #F8F9FA 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.placeholder-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.placeholder-icon {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
+.placeholder-text {
+  font-size: 0.875rem;
+  color: #9AA0A6;
+  font-weight: 500;
+}
+
+.image-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #F8F9FA, #E8EAED);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.error-icon {
+  font-size: 2rem;
+  opacity: 0.5;
+}
+
+.error-text {
+  font-size: 0.875rem;
+  color: #9AA0A6;
+  font-weight: 500;
+}
+
+.card-badges {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.feature-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1B365D;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.badge-icon {
+  width: 12px;
+  height: 12px;
+  color: #D4AF37;
+}
+
+.puppy-info {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.puppy-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.puppy-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1B365D;
+  margin: 0;
+  flex: 1;
+}
+
+.puppy-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #D4AF37;
+  margin-left: 1rem;
+}
+
+.puppy-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.detail-label {
+  font-size: 0.75rem;
+  color: #9AA0A6;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detail-value {
+  font-size: 0.875rem;
+  color: #1B365D;
+  font-weight: 600;
+}
+
+.puppy-temperament {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  background: rgba(74, 144, 226, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid #4A90E2;
+}
+
+.temperament-label {
+  font-size: 0.75rem;
+  color: #9AA0A6;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.temperament-value {
+  font-size: 0.875rem;
+  color: #1B365D;
+  font-weight: 600;
+}
+
+.puppy-personality {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.personality-tag {
+  background: linear-gradient(135deg, #D4AF37, #F4E4BC);
+  color: #1B365D;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.25px;
+}
+
+.puppy-ready-date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 8px;
+  color: #1B365D;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.calendar-icon {
+  width: 16px;
+  height: 16px;
+  color: #D4AF37;
+}
+
+.puppy-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #5F6368;
+  font-size: 0.875rem;
+}
+
+.location-icon {
+  width: 14px;
+  height: 14px;
+  color: #9AA0A6;
+}
+
+.puppy-cta {
+  width: 100%;
+  margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .puppy-card {
+    max-width: 100%;
+  }
+  
+  .puppy-image-container {
+    height: 240px;
+  }
+  
+  .puppy-info {
+    padding: 1rem;
+  }
+  
+  .puppy-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .puppy-price {
+    margin-left: 0;
+    font-size: 1.125rem;
+  }
+  
+  .detail-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .personality-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .puppy-card,
+  .puppy-image {
+    transition: none !important;
+  }
+  
+  .puppy-card:hover {
+    transform: none !important;
+  }
+}

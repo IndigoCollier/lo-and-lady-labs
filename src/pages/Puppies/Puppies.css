@@ -1,0 +1,199 @@
+.puppies-page {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #F5E6D3 0%, #FFFFFF 50%, #F5E6D3 100%);
+  min-height: 100vh;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.page-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #1B365D;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: #5F6368;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.error-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(27, 54, 93, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.error-state h2 {
+  color: #1B365D;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.error-state p {
+  color: #5F6368;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.error-state button {
+  background: #4A90E2;
+  color: #FFFFFF;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.error-state button:hover {
+  background: #3A7BC8;
+}
+
+@media (max-width: 768px) {
+  .puppies-page {
+    padding: 2rem 0;
+  }
+  
+  .page-header {
+    margin-bottom: 2rem;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .page-subtitle {
+    font-size: 1rem;
+  }
+}
+
+.active-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 25px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  animation: fadeInScale 0.4s ease-out;
+}
+
+.filter-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.filter-badge-primary {
+  background: linear-gradient(135deg, #4A90E2, #68B684);
+  color: white;
+}
+
+.filter-badge-secondary {
+  background: linear-gradient(135deg, #D4AF37, #F4E4BC);
+  color: #1B365D;
+}
+
+.badge-label {
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+.badge-value {
+  font-weight: 700;
+}
+
+.badge-remove {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: inherit;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  margin-left: 0.25rem;
+}
+
+.badge-remove:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.filter-badge-secondary .badge-remove {
+  background: rgba(27, 54, 93, 0.15);
+}
+
+.filter-badge-secondary .badge-remove:hover {
+  background: rgba(27, 54, 93, 0.25);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive design for filter badges */
+@media (max-width: 768px) {
+  .active-filters {
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .filter-badge {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+  
+  .badge-remove {
+    width: 20px;
+    height: 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .active-filters {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .filter-badge {
+    max-width: 280px;
+  }
+}

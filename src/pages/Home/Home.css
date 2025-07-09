@@ -150,3 +150,284 @@
     max-width: 300px;
   }
 }
+
+.quick-filter-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #F5E6D3 0%, #FFFFFF 50%, #F5E6D3 100%);
+}
+
+.quick-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filter-button {
+  display: flex !important;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem !important;
+  text-align: left;
+  min-height: 80px;
+  transition: all 0.3s ease;
+  border-radius: 16px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.filter-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.filter-button:hover::before {
+  left: 100%;
+}
+
+.filter-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.filter-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.filter-text strong {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.filter-text small {
+  opacity: 0.8;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+/* Specific filter button styles */
+.male-filter {
+  background: linear-gradient(135deg, #4A90E2, #68B684) !important;
+  color: white !important;
+}
+
+.female-filter {
+  background: linear-gradient(135deg, #FF6B8A, #FF8FA3) !important;
+  color: white !important;
+}
+
+.available-filter {
+  background: linear-gradient(135deg, #28a745, #20c997) !important;
+  color: white !important;
+}
+
+.price-filter {
+  background: linear-gradient(135deg, #D4AF37, #F4E4BC) !important;
+  color: #1B365D !important;
+}
+
+/* Responsive design for filter buttons */
+@media (max-width: 768px) {
+  .quick-filter-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 400px;
+  }
+  
+  .filter-button {
+    padding: 1.25rem 1.5rem !important;
+    min-height: 70px;
+  }
+  
+  .filter-icon {
+    font-size: 1.75rem;
+  }
+  
+  .filter-text strong {
+    font-size: 1rem;
+  }
+  
+  .filter-text small {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-filter-section {
+    padding: 3rem 0;
+  }
+  
+  .filter-button {
+    gap: 0.75rem;
+    padding: 1rem 1.25rem !important;
+  }
+}
+
+/* UPDATED: 4-column features grid */
+.features-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* UPDATED: 4-column filter grid */
+.quick-filter-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Quick Filter Section */
+.quick-filter-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #F5E6D3 0%, #FFFFFF 50%, #F5E6D3 100%);
+}
+
+.filter-button {
+  display: flex !important;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem !important;
+  text-align: left;
+  min-height: 80px;
+  transition: all 0.3s ease;
+  border-radius: 16px !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.filter-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.filter-button:hover::before {
+  left: 100%;
+}
+
+.filter-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.filter-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.filter-text strong {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.filter-text small {
+  opacity: 0.8;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+/* UPDATED: Website-matching filter button colors */
+.male-filter-new {
+  background: linear-gradient(135deg, #1B365D, #4A90E2) !important;
+  color: white !important;
+}
+
+.female-filter-new {
+  background: linear-gradient(135deg, #D4AF37, #F4E4BC) !important;
+  color: #1B365D !important;
+}
+
+.available-filter-new {
+  background: linear-gradient(135deg, #68B684, #8FD5A6) !important;
+  color: white !important;
+}
+
+.price-filter-new {
+  background: linear-gradient(135deg, #F5E6D3, #E8D4B8) !important;
+  color: #1B365D !important;
+  border: 2px solid #D4AF37 !important;
+}
+
+/* Responsive design for 4-column layouts */
+@media (max-width: 1200px) {
+  .features-grid-4,
+  .quick-filter-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid-4,
+  .quick-filter-grid-4 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .filter-button {
+    padding: 1.25rem 1.5rem !important;
+    min-height: 70px;
+  }
+  
+  .filter-icon {
+    font-size: 1.75rem;
+  }
+  
+  .filter-text strong {
+    font-size: 1rem;
+  }
+  
+  .filter-text small {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quick-filter-section {
+    padding: 3rem 0;
+  }
+  
+  .filter-button {
+    gap: 0.75rem;
+    padding: 1rem 1.25rem !important;
+  }
+  
+  .features-grid-4,
+  .quick-filter-grid-4 {
+    gap: 0.75rem;
+  }
+}

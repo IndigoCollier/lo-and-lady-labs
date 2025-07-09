@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import HeroCarousel from '../../components/home/HeroCarousel'
 import FeaturedPuppies from '../../components/home/FeaturedPuppies'
 import TestimonialSection from '../../components/home/TestimonialSection'
@@ -8,10 +9,25 @@ import { useScrollAnimation } from '../../hooks/useScrollAnimation'
 import './Home.css'
 
 function Home() {
+  const navigate = useNavigate()
   const [featuresRef, featuresVisible] = useScrollAnimation()
   const [searchRef, searchVisible] = useScrollAnimation()
   const [testimonialsRef, testimonialsVisible] = useScrollAnimation()
   const [ctaRef, ctaVisible] = useScrollAnimation()
+
+  // SAFE: Simple navigation function with URL parameters
+  const goToPuppiesWithFilter = (filterType, filterValue) => {
+    navigate(`/puppies?${filterType}=${filterValue}`)
+  }
+
+  // FIXED: Navigate to puppies page
+  const goToPuppies = () => {
+    navigate('/puppies')
+  }
+
+  const goToContact = () => {
+    navigate('/contact')
+  }
 
   return (
     <div className="home-page page-enter">
@@ -31,7 +47,8 @@ function Home() {
             </p>
           </div>
           
-          <div className={`features-grid ${featuresVisible ? 'animate-stagger-children' : ''}`}>
+          {/* UPDATED: 4 columns layout */}
+          <div className={`features-grid features-grid-4 ${featuresVisible ? 'animate-stagger-children' : ''}`}>
             <div className="feature-card hover-lift">
               <div className="feature-icon">
                 <Award />
@@ -75,6 +92,73 @@ function Home() {
         </div>
       </section>
 
+      {/* UPDATED: Filter Section with Better Colors */}
+      <section className="quick-filter-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Find Your Perfect Match</h2>
+            <p className="section-subtitle">
+              Use our quick filters to find puppies that match your preferences
+            </p>
+          </div>
+          
+          {/* UPDATED: 4 columns layout with website-matching colors */}
+          <div className="quick-filter-grid quick-filter-grid-4">
+            <Button
+              variant="primary"
+              size="large"
+              className="filter-button male-filter-new"
+              onClick={() => goToPuppiesWithFilter('gender', 'male')}
+            >
+              <span className="filter-icon">🐕</span>
+              <span className="filter-text">
+                <strong>Male Puppies</strong>
+                <small>Energetic & Loyal</small>
+              </span>
+            </Button>
+            
+            <Button
+              variant="primary"
+              size="large"
+              className="filter-button female-filter-new"
+              onClick={() => goToPuppiesWithFilter('gender', 'female')}
+            >
+              <span className="filter-icon">🐕</span>
+              <span className="filter-text">
+                <strong>Female Puppies</strong>
+                <small>Gentle & Loving</small>
+              </span>
+            </Button>
+            
+            <Button
+              variant="secondary"
+              size="large"
+              className="filter-button available-filter-new"
+              onClick={() => goToPuppiesWithFilter('status', 'available')}
+            >
+              <span className="filter-icon">✅</span>
+              <span className="filter-text">
+                <strong>Available Now</strong>
+                <small>Ready for their new home</small>
+              </span>
+            </Button>
+            
+            <Button
+              variant="outline"
+              size="large"
+              className="filter-button price-filter-new"
+              onClick={() => goToPuppiesWithFilter('sort', 'price')}
+            >
+              <span className="filter-icon">💰</span>
+              <span className="filter-text">
+                <strong>Sort by Price</strong>
+                <small>Low to high pricing</small>
+              </span>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <div 
         ref={searchRef}
         className={searchVisible ? 'animate-fade-in-up' : ''}
@@ -104,14 +188,14 @@ function Home() {
                 variant="primary" 
                 size="large"
                 className="btn-hover-glow"
-                onClick={() => window.location.href = '/puppies'}
+                onClick={goToPuppies}
               >
                 View Available Puppies
               </Button>
               <Button 
                 variant="outline" 
                 size="large"
-                onClick={() => window.location.href = '/contact'}
+                onClick={goToContact}
               >
                 Contact Us
               </Button>

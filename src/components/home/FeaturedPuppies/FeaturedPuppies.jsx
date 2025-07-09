@@ -1,8 +1,21 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { getFeaturedPuppies, formatPrice } from '../../../data/mockPuppies'
 
 function FeaturedPuppies() {
+  const navigate = useNavigate()
   const featuredPuppies = getFeaturedPuppies(3)
+
+  // FIXED: Add navigation function
+  const goToPuppiesPage = () => {
+    navigate('/puppies')
+  }
+
+  const goToPuppyDetail = (puppyId) => {
+    // For now, just log - you can implement puppy detail pages later
+    console.log('Navigate to puppy detail:', puppyId)
+    alert(`Viewing ${puppyId} details - This will be implemented later!`)
+  }
 
   return (
     <section style={{ padding: '4rem 0', background: '#F5F5F5' }}>
@@ -105,18 +118,24 @@ function FeaturedPuppies() {
                   {formatPrice(puppy.price)}
                 </div>
                 
-                <button style={{
-                  background: 'linear-gradient(135deg, #D4AF37 0%, #B8941F 100%)',
-                  color: 'white',
-                  border: 'none',
-                  padding: '0.75rem 2rem',
-                  borderRadius: '8px',
-                  cursor: 'pointer',
-                  fontWeight: '600',
-                  fontSize: '1rem',
-                  textTransform: 'uppercase',
-                  transition: 'transform 0.2s ease'
-                }}>
+                {/* FIXED: Added onClick handler for individual puppy buttons */}
+                <button 
+                  onClick={() => goToPuppyDetail(puppy.name)}
+                  style={{
+                    background: 'linear-gradient(135deg, #D4AF37 0%, #B8941F 100%)',
+                    color: 'white',
+                    border: 'none',
+                    padding: '0.75rem 2rem',
+                    borderRadius: '8px',
+                    cursor: 'pointer',
+                    fontWeight: '600',
+                    fontSize: '1rem',
+                    textTransform: 'uppercase',
+                    transition: 'transform 0.2s ease'
+                  }}
+                  onMouseOver={(e) => e.target.style.transform = 'translateY(-2px)'}
+                  onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
+                >
                   Meet {puppy.name}
                 </button>
               </div>
@@ -124,18 +143,33 @@ function FeaturedPuppies() {
           ))}
         </div>
         
+        {/* FIXED: Added onClick handler for "View All Available Puppies" button */}
         <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <button style={{
-            background: 'transparent',
-            color: '#1B365D',
-            border: '2px solid #1B365D',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            fontWeight: '600',
-            fontSize: '1rem',
-            textTransform: 'uppercase'
-          }}>
+          <button 
+            onClick={goToPuppiesPage}
+            style={{
+              background: 'transparent',
+              color: '#1B365D',
+              border: '2px solid #1B365D',
+              padding: '1rem 2rem',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              fontWeight: '600',
+              fontSize: '1rem',
+              textTransform: 'uppercase',
+              transition: 'all 0.3s ease'
+            }}
+            onMouseOver={(e) => {
+              e.target.style.background = '#1B365D'
+              e.target.style.color = 'white'
+              e.target.style.transform = 'translateY(-2px)'
+            }}
+            onMouseOut={(e) => {
+              e.target.style.background = 'transparent'
+              e.target.style.color = '#1B365D'
+              e.target.style.transform = 'translateY(0)'
+            }}
+          >
             View All Available Puppies
           </button>
         </div>

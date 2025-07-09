@@ -1,6 +1,6 @@
 export const mockPuppies = [
   {
-    id: 1,
+   id: 1,
     name: "Luna",
     image: "/images/puppies/puppy-1.jpg",
     age: "10 weeks",
@@ -14,9 +14,14 @@ export const mockPuppies = [
     parents: { mother: "Lady - Golden Retriever", father: "Lo - Standard Poodle" },
     healthTesting: ["Hip & Elbow Clearances", "Eye Clearances", "Heart Clearance"],
     readyDate: "February 15, 2025",
-    personality: ["Calm", "Affectionate", "Intelligent"],
+    personality: ["Gentle", "Loving", "Calm", "Intelligent"],
     vaccinations: "Up to date",
-    microchipped: true
+    microchipped: true,
+    training: "Basic training started",
+    energy: 3,
+    goodWithKids: true,
+    goodWithPets: true,
+    adoptionStatus: "available"
   },
   {
     id: 2,
@@ -33,9 +38,14 @@ export const mockPuppies = [
     parents: { mother: "Lady - Golden Retriever", father: "Lo - Standard Poodle" },
     healthTesting: ["Hip & Elbow Clearances", "Eye Clearances", "Heart Clearance"],
     readyDate: "February 18, 2025",
-    personality: ["Energetic", "Social", "Intelligent"],
+    personality: ["Playful", "Energetic", "Social", "Intelligent"],
     vaccinations: "Up to date",
-    microchipped: true
+    microchipped: true,
+    training: "House training in progress",
+    energy: 5,
+    goodWithKids: true,
+    goodWithPets: true,
+    adoptionStatus: "available"
   },
   {
     id: 3,
@@ -47,33 +57,43 @@ export const mockPuppies = [
     size: "Medium (30-45 lbs)",
     temperament: "Sweet & Calm",
     price: 2750,
-    available: true,
+    available: false,
     description: "Bella is a stunning apricot beauty with a calm nature.",
     parents: { mother: "Lady - Golden Retriever", father: "Lo - Standard Poodle" },
     healthTesting: ["Hip & Elbow Clearances", "Eye Clearances", "Heart Clearance"],
     readyDate: "February 22, 2025",
-    personality: ["Gentle", "Patient", "Loving"],
+    personality: ["Sweet", "Patient", "Affectionate"],
     vaccinations: "Up to date",
-    microchipped: true
+    microchipped: true,
+    training: "Basic training started",
+    energy: 2,
+    goodWithKids: true,
+    goodWithPets: true,
+    adoptionStatus: "pending"
   },
   {
     id: 4,
     name: "Max",
     image: "/images/puppies/puppy-4.jpg",
-    age: "11 weeks",
+    age: "12 weeks",
     gender: "Male",
     color: "Chocolate",
-    size: "Standard (55-75 lbs)",
-    temperament: "Confident & Friendly",
+    size: "Large (65-80 lbs)",
+    temperament: "Confident & Loyal",
     price: 3000,
     available: false,
-    description: "Max is a confident chocolate male with a friendly personality. Already found his forever family!",
+    description: "Max found his forever family! This confident chocolate boy is living his best life.",
     parents: { mother: "Lady - Golden Retriever", father: "Lo - Standard Poodle" },
     healthTesting: ["Hip & Elbow Clearances", "Eye Clearances", "Heart Clearance"],
-    readyDate: "February 10, 2025",
-    personality: ["Confident", "Outgoing", "Loyal"],
-    vaccinations: "Up to date",
-    microchipped: true
+    readyDate: "February 1, 2025",
+    personality: ["Confident", "Loyal", "Protective"],
+    vaccinations: "Complete",
+    microchipped: true,
+    training: "Advanced training completed",
+    energy: 4,
+    goodWithKids: true,
+    goodWithPets: true,
+    adoptionStatus: "adopted"
   },
   {
     id: 5,
@@ -92,7 +112,12 @@ export const mockPuppies = [
     readyDate: "February 20, 2025",
     personality: ["Smart", "Playful", "Curious"],
     vaccinations: "Up to date",
-    microchipped: true
+    microchipped: true,
+    training: "Basic training started",
+    energy: 4,
+    goodWithKids: true,
+    goodWithPets: true,
+    adoptionStatus: "pending"
   },
   {
     id: 6,
@@ -111,7 +136,12 @@ export const mockPuppies = [
     readyDate: "February 25, 2025",
     personality: ["Gentle", "Loyal", "Calm"],
     vaccinations: "Up to date",
-    microchipped: true
+    microchipped: true,
+    training: "Advanced training completed",
+    energy: 4,
+    goodWithKids: true,
+    goodWithPets: true,
+    adoptionStatus: "available"
   }
 ]
 

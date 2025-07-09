@@ -1,0 +1,214 @@
+.puppy-grid {
+  width: 100%;
+}
+
+.grid-container {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Grid view layouts */
+.grid-container.grid-view.columns-1 {
+  grid-template-columns: 1fr;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-container.grid-view.columns-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-container.grid-view.columns-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-container.grid-view.columns-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* List view always single column */
+.grid-container.list-view {
+  grid-template-columns: 1fr;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 1rem;
+}
+
+/* FIXED: Grid items - No initial opacity issues */
+.grid-item {
+  /* REMOVED: opacity: 0 that was causing invisible cards */
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+  /* CRITICAL: Ensure all grid items are visible */
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FIXED: Removed problematic hover animation */
+.grid-item.hovered {
+  /* REMOVED: animation that was causing cards to disappear */
+}
+
+/* SIMPLIFIED: Direct hover effect on the card itself */
+.grid-item:hover .puppy-card {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(27, 54, 93, 0.15);
+}
+
+/* Loading skeleton grid */
+.loading-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.loading-grid.columns-1 {
+  grid-template-columns: 1fr;
+}
+
+.loading-grid.columns-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.loading-grid.columns-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.loading-grid.columns-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.puppy-card-skeleton {
+  background: #FFFFFF;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(27, 54, 93, 0.1);
+}
+
+.skeleton-image {
+  height: 280px;
+  background: linear-gradient(90deg, #F8F9FA 25%, #E8EAED 50%, #F8F9FA 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skeleton-line {
+  height: 1rem;
+  background: linear-gradient(90deg, #F8F9FA 25%, #E8EAED 50%, #F8F9FA 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+.skeleton-line.large {
+  width: 80%;
+  height: 1.5rem;
+}
+
+.skeleton-line.medium {
+  width: 60%;
+}
+
+.skeleton-line.small {
+  width: 40%;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #5F6368;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.empty-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1B365D;
+  margin-bottom: 1rem;
+}
+
+.empty-message {
+  font-size: 1.125rem;
+  max-width: 400px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .grid-container.grid-view.columns-4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid-container.grid-view.columns-3,
+  .grid-container.grid-view.columns-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-container.grid-view.columns-2,
+  .grid-container.grid-view.columns-3,
+  .grid-container.grid-view.columns-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  .grid-container {
+    gap: 1.5rem;
+  }
+  
+  .empty-state {
+    padding: 3rem 1rem;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .grid-item {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .skeleton-image,
+  .skeleton-line {
+    animation: none !important;
+  }
+  
+  .grid-item:hover .puppy-card {
+    transform: none !important;
+  }
+}
