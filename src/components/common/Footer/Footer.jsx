@@ -68,7 +68,7 @@ function Footer() {
                   color: '#D4AF37',
                   filter: 'drop-shadow(0 1px 2px rgba(212, 175, 55, 0.3))'
                 }} />
-                <span>(555) 123-4567</span>
+                <span>(901) 123-4567</span>
               </div>
               <div style={{ 
                 display: 'flex', 

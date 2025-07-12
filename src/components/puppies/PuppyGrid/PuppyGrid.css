@@ -58,11 +58,6 @@
   }
 }
 
-/* FIXED: Removed problematic hover animation */
-.grid-item.hovered {
-  /* REMOVED: animation that was causing cards to disappear */
-}
-
 /* SIMPLIFIED: Direct hover effect on the card itself */
 .grid-item:hover .puppy-card {
   transform: translateY(-8px);

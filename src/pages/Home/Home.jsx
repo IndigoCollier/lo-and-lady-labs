@@ -196,6 +196,7 @@ function Home() {
                 variant="outline" 
                 size="large"
                 onClick={goToContact}
+                className="filter-button"
               >
                 Contact Us
               </Button>

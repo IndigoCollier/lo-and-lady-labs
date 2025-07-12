@@ -8,18 +8,18 @@ const quickFilters = [
   { id: 'all', label: 'All Puppies', icon: '🐕', filterType: null, filterValue: null },
   { id: 'male', label: 'Male', icon: '♂️', filterType: 'gender', filterValue: 'male' },
   { id: 'female', label: 'Female', icon: '♀️', filterType: 'gender', filterValue: 'female' },
-  { id: 'small', label: 'Small', icon: '🐕‍🦺', filterType: 'size', filterValue: 'small' },
+  { id: 'small', label: 'Small', icon: '🐕‍🦺', filterType: 'size', filterValue: 'mini' },
   { id: 'medium', label: 'Medium', icon: '🐕', filterType: 'size', filterValue: 'medium' },
-  { id: 'large', label: 'Large', icon: '🐕‍🦮', filterType: 'size', filterValue: 'large' }
+  { id: 'large', label: 'Large', icon: '🐕‍🦮', filterType: 'size', filterValue: 'standard' }
 ]
 
 const popularSearches = [
-  { term: 'Gentle temperament', filterType: 'status', filterValue: 'available' },
-  { term: 'Good with kids', filterType: 'status', filterValue: 'available' },
-  { term: 'Ready soon', filterType: 'status', filterValue: 'available' },
-  { term: 'Cream colored', filterType: 'color', filterValue: 'Cream' },
-  { term: 'Low energy', filterType: 'sort', filterValue: 'age' },
-  { term: 'Playful', filterType: 'gender', filterValue: 'male' }
+  { term: 'Gentle temperament', filterType: 'temperament', filterValue: 'gentle' },
+  { term: 'Good with kids', filterType: 'temperament', filterValue: 'gentle' },
+  { term: 'Ready soon', filterType: 'availability', filterValue: 'available' },
+  { term: 'Cream colored', filterType: 'color', filterValue: 'cream' },
+  { term: 'Golden puppies', filterType: 'color', filterValue: 'golden' },
+  { term: 'Playful', filterType: 'temperament', filterValue: 'playful' }
 ]
 
 function QuickSearch() {
@@ -73,6 +73,11 @@ function QuickSearch() {
       // Fallback for text search
       navigate(`/puppies?search=${encodeURIComponent(searchItem.term)}`)
     }
+  }
+
+  // Handle advanced filter navigation with proper parameters
+  const handleAdvancedFilter = (filterType, filterValue) => {
+    navigate(`/puppies?${filterType}=${filterValue}`)
   }
 
   // Handle Enter key in search input
@@ -156,22 +161,22 @@ function QuickSearch() {
               </p>
               <div className="advanced-filters">
                 <button 
-                  onClick={() => navigate('/puppies?status=available')}
+                  onClick={() => handleAdvancedFilter('availability', 'available')}
                   className="advanced-filter-btn"
                 >
                   Available Now
                 </button>
                 <button 
-                  onClick={() => navigate('/puppies?sort=price')}
+                  onClick={() => handleAdvancedFilter('price', '2500-2750')}
                   className="advanced-filter-btn"
                 >
-                  Sort by Price
+                  Budget Friendly
                 </button>
                 <button 
-                  onClick={() => navigate('/puppies?sort=age')}
+                  onClick={() => handleAdvancedFilter('age', '8-10')}
                   className="advanced-filter-btn"
                 >
-                  Sort by Age
+                  8-10 Weeks Old
                 </button>
               </div>
             </div>
@@ -186,10 +191,16 @@ function QuickSearch() {
               </p>
               <div className="advanced-filters">
                 <button 
-                  onClick={() => navigate('/puppies?filterBy=favorites')}
-                  className="advanced-filter-btn"
+                  onClick={() => navigate('/puppies')}
+                  className="advanced-filter-btn favorites"
                 >
                   View My Favorites
+                </button>
+                <button 
+                  onClick={() => handleAdvancedFilter('temperament', 'gentle')}
+                  className="advanced-filter-btn"
+                >
+                  Gentle Puppies
                 </button>
               </div>
             </div>
@@ -204,10 +215,22 @@ function QuickSearch() {
               </p>
               <div className="advanced-filters">
                 <button 
+                  onClick={() => handleAdvancedFilter('color', 'cream')}
+                  className="advanced-filter-btn"
+                >
+                  Cream Colored
+                </button>
+                <button 
+                  onClick={() => handleAdvancedFilter('color', 'golden')}
+                  className="advanced-filter-btn"
+                >
+                  Golden Colored
+                </button>
+                <button 
                   onClick={() => navigate('/puppies')}
                   className="advanced-filter-btn"
                 >
-                  Browse All Puppies
+                  Browse All
                 </button>
               </div>
             </div>

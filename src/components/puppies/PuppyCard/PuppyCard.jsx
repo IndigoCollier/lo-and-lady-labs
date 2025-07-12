@@ -133,7 +133,7 @@ function PuppyCard({
 
         <div className="puppy-location">
           <MapPin className="location-icon" />
-          <span>Phoenix, AZ</span>
+          <span>Memphis, TN</span>
         </div>
 
         <Button

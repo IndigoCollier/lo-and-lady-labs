@@ -121,7 +121,7 @@
 
 .puppy-name {
   font-size: 0.875rem;
-  color: #D4AF37;
+  color: #D4AF37 !important;
   font-weight: 500;
 }
 

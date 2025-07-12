@@ -222,26 +222,6 @@
   font-weight: 400;
 }
 
-/* Specific filter button styles */
-.male-filter {
-  background: linear-gradient(135deg, #4A90E2, #68B684) !important;
-  color: white !important;
-}
-
-.female-filter {
-  background: linear-gradient(135deg, #FF6B8A, #FF8FA3) !important;
-  color: white !important;
-}
-
-.available-filter {
-  background: linear-gradient(135deg, #28a745, #20c997) !important;
-  color: white !important;
-}
-
-.price-filter {
-  background: linear-gradient(135deg, #D4AF37, #F4E4BC) !important;
-  color: #1B365D !important;
-}
 
 /* Responsive design for filter buttons */
 @media (max-width: 768px) {
@@ -365,13 +345,14 @@
 .male-filter-new {
   background: linear-gradient(135deg, #1B365D, #4A90E2) !important;
   color: white !important;
+  border: 2px solid navy !important;
 }
 
 .female-filter-new {
-  background: linear-gradient(135deg, #D4AF37, #F4E4BC) !important;
+background: linear-gradient(90deg, hsla(323, 84%, 83%, 1) 0%, hsla(329, 92%, 64%, 1) 100%) !important;
   color: #1B365D !important;
+  border: 2px solid hsla(329, 84%, 55%, 1) !important;
 }
-
 .available-filter-new {
   background: linear-gradient(135deg, #68B684, #8FD5A6) !important;
   color: white !important;
