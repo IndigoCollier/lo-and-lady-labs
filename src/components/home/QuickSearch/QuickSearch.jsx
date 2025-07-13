@@ -196,12 +196,7 @@ function QuickSearch() {
                 >
                   View My Favorites
                 </button>
-                <button 
-                  onClick={() => handleAdvancedFilter('temperament', 'gentle')}
-                  className="advanced-filter-btn"
-                >
-                  Gentle Puppies
-                </button>
+                
               </div>
             </div>
             
@@ -231,6 +226,12 @@ function QuickSearch() {
                   className="advanced-filter-btn"
                 >
                   Browse All
+                </button>
+                <button 
+                  onClick={() => handleAdvancedFilter('temperament', 'gentle')}
+                  className="advanced-filter-btn"
+                >
+                  Gentle Puppies
                 </button>
               </div>
             </div>

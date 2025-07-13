@@ -1,3 +1,4 @@
+import PuppyInquiryForm from '../../forms/PuppyInquiryForm'
 import React, { useState } from 'react'
 import { Calendar, Award, MapPin } from 'lucide-react'
 import FavoriteButton from '../FavoriteButton'
@@ -6,6 +7,7 @@ import Button from '../../common/Button'
 import { formatPrice } from '../../../data/mockPuppies'
 import './PuppyCard.css'
 
+
 function PuppyCard({ 
   puppy, 
   onViewDetails, 
@@ -13,6 +15,19 @@ function PuppyCard({
   isFavorite = false,
   size = 'standard'
 }) {
+
+  const [showInquiryModal, setShowInquiryModal] = useState(false)
+
+  const handleInquireClick = (e) => {
+  e.stopPropagation() // Prevent card click event
+  setShowInquiryModal(true)
+}
+
+  const handleInquirySuccess = (formData) => {
+  console.log('Inquiry submitted for:', puppy.name, formData)
+  setShowInquiryModal(false)
+  // You could show a toast notification here
+}
   const [imageLoaded, setImageLoaded] = useState(false)
   const [imageError, setImageError] = useState(false)
 
@@ -144,7 +159,23 @@ function PuppyCard({
         >
           Meet {puppy.name}
         </Button>
+
+        <Button 
+          variant="primary" 
+          size="medium"
+          onClick={handleInquireClick}
+          className="inquire-button"
+        >
+          Inquire About {puppy.name}
+        </Button>
       </div>
+
+      <PuppyInquiryForm
+        puppy={puppy}
+        isOpen={showInquiryModal}
+        onClose={() => setShowInquiryModal(false)}
+        onSuccess={handleInquirySuccess}
+      />
     </div>
   )
 }

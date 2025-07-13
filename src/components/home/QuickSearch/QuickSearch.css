@@ -9,10 +9,10 @@
 }
 
 .section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: #1B365D;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4vw, 3rem) !important;
+  color: #1B365D !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
 }
 
 .section-subtitle {
@@ -227,7 +227,7 @@
   background: linear-gradient(135deg, #F8F9FA, #E8EAED);
   border: 2px solid #E8EAED;
   border-radius: 12px;
-  padding: 0.75rem 1.25rem;
+  padding: .75rem 1.25rem;
   font-size: 0.875rem;
   font-weight: 600;
   color: #1B365D;
@@ -256,7 +256,7 @@
   background: linear-gradient(135deg, #D4AF37, #F4E4BC) ;
   color:  #1B365D;
   border: 2px solid #D4AF37;
-  
+  padding: .85rem 2rem;
 }
 
 .advanced-filter-btn.favorites:hover {

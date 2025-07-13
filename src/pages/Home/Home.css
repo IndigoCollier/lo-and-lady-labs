@@ -5,11 +5,14 @@
 .why-choose-section {
   padding: 6rem 0;
   background: #FFFFFF;
+  justify-content: center;
+  
 }
 
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
+  justify-content: center;
 }
 
 .section-icon {
@@ -17,7 +20,10 @@
   height: 48px;
   color: #D4AF37;
   margin-bottom: 1.5rem;
+  margin-left: 48%;
   filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));
+  display: flex;
+  justify-content: center !important;
 }
 
 .section-title {

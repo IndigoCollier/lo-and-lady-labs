@@ -1,0 +1,196 @@
+.contact-page {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #F5E6D3 0%, #FFFFFF 50%, #F5E6D3 100%);
+  min-height: 100vh;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.page-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #1B365D;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: #5F6368;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(27, 54, 93, 0.1);
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.info-icon {
+  width: 32px;
+  height: 32px;
+  color: #FF6B8A;
+}
+
+.info-header h3 {
+  color: #1B365D;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.info-card > p {
+  color: #5F6368;
+  margin: 0 0 2rem 0;
+  font-size: 1rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  color: #4A90E2;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.contact-item div {
+  flex: 1;
+}
+
+.contact-item strong {
+  color: #1B365D;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.contact-item p {
+  color: #5F6368;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.visit-info {
+  background: linear-gradient(135deg, #E8F4FD, #F0F8FF);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 2px solid #4A90E2;
+}
+
+.visit-info h4 {
+  color: #1B365D;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+.visit-info p {
+  color: #5F6368;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.visit-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.visit-info li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #5F6368;
+  line-height: 1.4;
+}
+
+.visit-info li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #4A90E2;
+  font-weight: bold;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 2rem 0;
+  }
+  
+  .page-header {
+    margin-bottom: 2rem;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+  }
+  
+  .page-subtitle {
+    font-size: 1rem;
+  }
+  
+  .info-card,
+  .visit-info {
+    padding: 1.5rem;
+  }
+  
+  .info-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}

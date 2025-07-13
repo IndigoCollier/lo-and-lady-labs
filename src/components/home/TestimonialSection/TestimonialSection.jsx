@@ -6,7 +6,7 @@ const testimonials = [
   {
     id: 1,
     name: "Sarah & Mike Johnson",
-    location: "Scottsdale, AZ",
+    location: "Memphis, TN",
     puppyName: "Bella",
     rating: 5,
     text: "Bella has been the perfect addition to our family! Lo and Lady Labs made the entire process seamless. Their dedication to health testing and socialization really shows - Bella is healthy, happy, and so well-adjusted.",
@@ -16,7 +16,7 @@ const testimonials = [
   {
     id: 2,
     name: "Jennifer Martinez",
-    location: "Phoenix, AZ", 
+    location: "Nashville, TN", 
     puppyName: "Cooper",
     rating: 5,
     text: "Cooper is everything we hoped for and more! He's gentle with our kids, incredibly smart, and has the sweetest temperament. The team was professional and caring throughout the entire adoption process.",
@@ -26,7 +26,7 @@ const testimonials = [
   {
     id: 3,
     name: "David & Lisa Chen",
-    location: "Tempe, AZ",
+    location: "Gatlinburg, TN",
     puppyName: "Luna",
     rating: 5,
     text: "We couldn't be happier with Luna! She's brought so much joy to our home. The health guarantees and ongoing support from Lo and Lady Labs gave us complete confidence in our choice.",
