@@ -73,7 +73,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  color: #5F6368;
+  color: #1B365D !important;
   font-size: 0.875rem;
 }
 

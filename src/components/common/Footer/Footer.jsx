@@ -30,7 +30,7 @@ function Footer() {
                 height: '28px',
                 filter: 'drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3))'
               }} />
-              <span style={{ color: '#FFFFFF' }}>Lo and Lady Labs</span>
+              <span Link to="/" style={{ color: '#FFFFFF' }}>Lo and Lady Labs</span>
             </div>
             <p style={{ 
               color: '#F5E6D3', 

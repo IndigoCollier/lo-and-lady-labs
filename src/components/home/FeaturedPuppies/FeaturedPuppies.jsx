@@ -1,177 +1,120 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Crown, Heart, Star, Calendar, Award } from 'lucide-react'
+import Button from '../../common/Button'
 import { getFeaturedPuppies, formatPrice } from '../../../data/mockPuppies'
+import './FeaturedPuppies.css'
 
 function FeaturedPuppies() {
   const navigate = useNavigate()
   const featuredPuppies = getFeaturedPuppies(3)
 
-  // FIXED: Add navigation function
-  const goToPuppiesPage = () => {
+  // Navigate to individual puppy detail page
+  const handlePuppyClick = (puppyId) => {
+    navigate(`/puppies/${puppyId}`)
+  }
+
+  // Navigate to main puppies page
+  const handleViewAllPuppies = () => {
     navigate('/puppies')
   }
 
-  const goToPuppyDetail = (puppyId) => {
-    // For now, just log - you can implement puppy detail pages later
-    console.log('Navigate to puppy detail:', puppyId)
-    alert(`Viewing ${puppyId} details - This will be implemented later!`)
-  }
-
   return (
-    <section style={{ padding: '4rem 0', background: '#F5F5F5' }}>
+    <section className="featured-puppies">
       <div className="container">
-        <h2 style={{ 
-          textAlign: 'center', 
-          marginBottom: '2rem', 
-          color: '#1B365D',
-          fontSize: '2.5rem',
-          fontWeight: '700'
-        }}>
-          Meet Our Available Puppies
-        </h2>
-        <p style={{
-          textAlign: 'center',
-          fontSize: '1.25rem',
-          color: '#3C4043',
-          marginBottom: '3rem'
-        }}>
-          Each puppy is lovingly raised and ready for their forever home
-        </p>
-        
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', 
-          gap: '2rem',
-          maxWidth: '1200px',
-          margin: '0 auto'
-        }}>
+        <div className="section-header">
+          <Crown className="section-icon" />
+          <h2 className="section-title">Meet Our Available Puppies</h2>
+          <p className="section-subtitle">
+            Each puppy is lovingly raised and ready for their forever home
+          </p>
+        </div>
+
+        <div className="puppies-grid">
           {featuredPuppies.map((puppy) => (
-            <div key={puppy.id} style={{
-              background: 'white',
-              padding: '0',
-              borderRadius: '15px',
-              boxShadow: '0 8px 30px rgba(27, 54, 93, 0.1)',
-              textAlign: 'center',
-              overflow: 'hidden',
-              transition: 'transform 0.3s ease'
-            }}>
-              <img 
-                src={puppy.image} 
-                alt={puppy.name}
-                style={{ 
-                  width: '100%', 
-                  height: '250px', 
-                  objectFit: 'cover'
-                }}
-              />
-              
-              <div style={{ padding: '1.5rem' }}>
-                <h3 style={{ 
-                  color: '#1B365D', 
-                  margin: '0 0 1rem 0',
-                  fontSize: '1.5rem',
-                  fontWeight: '700'
-                }}>
-                  {puppy.name}
-                </h3>
+            <div key={puppy.id} className="puppy-card">
+              <div className="puppy-image-container">
+                <img 
+                  src={puppy.image} 
+                  alt={puppy.name} 
+                  className="puppy-image"
+                  onClick={() => handlePuppyClick(puppy.id)}
+                  style={{ cursor: 'pointer' }}
+                />
                 
-                <div style={{ 
-                  display: 'grid', 
-                  gridTemplateColumns: '1fr 1fr', 
-                  gap: '0.5rem',
-                  marginBottom: '1rem',
-                  textAlign: 'left'
-                }}>
-                  <div><strong>Age:</strong> {puppy.age}</div>
-                  <div><strong>Gender:</strong> {puppy.gender}</div>
-                  <div><strong>Color:</strong> {puppy.color}</div>
-                  <div><strong>Size:</strong> {puppy.size.split(' ')[0]}</div>
+                <div className="available-badge">
+                  <Star className="badge-icon" />
+                  Available
                 </div>
                 
-                <div style={{
-                  display: 'flex',
-                  gap: '0.5rem',
-                  justifyContent: 'center',
-                  marginBottom: '1rem',
-                  flexWrap: 'wrap'
-                }}>
+                <button className="heart-button">
+                  <Heart className="heart-icon" />
+                </button>
+              </div>
+
+              <div className="puppy-info">
+                <h3 className="puppy-name">{puppy.name}</h3>
+                
+                <div className="puppy-details">
+                  <div className="detail-item">
+                    <span className="detail-label">Age:</span>
+                    <span className="detail-value">{puppy.age}</span>
+                  </div>
+                  <div className="detail-item">
+                    <span className="detail-label">Gender:</span>
+                    <span className="detail-value">{puppy.gender}</span>
+                  </div>
+                  <div className="detail-item">
+                    <span className="detail-label">Color:</span>
+                    <span className="detail-value">{puppy.color}</span>
+                  </div>
+                  <div className="detail-item">
+                    <span className="detail-label">Size:</span>
+                    <span className="detail-value">{puppy.size.split(' ')[0]}</span>
+                  </div>
+                </div>
+
+                <div className="personality-tags">
                   {puppy.personality.slice(0, 2).map((trait, index) => (
-                    <span key={index} style={{
-                      background: 'linear-gradient(135deg, #D4AF37, #F4E4BC)',
-                      color: '#1B365D',
-                      padding: '0.25rem 0.75rem',
-                      borderRadius: '15px',
-                      fontSize: '0.8rem',
-                      fontWeight: '600'
-                    }}>
-                      {trait}
-                    </span>
+                    <span key={index} className="personality-tag">{trait}</span>
                   ))}
                 </div>
-                
-                <div style={{
-                  fontSize: '1.75rem',
-                  fontWeight: '700',
-                  color: '#D4AF37',
-                  marginBottom: '1rem'
-                }}>
-                  {formatPrice(puppy.price)}
+
+                <div className="ready-date">
+                  <Calendar className="calendar-icon" />
+                  <span>Ready: {puppy.readyDate}</span>
                 </div>
-                
-                {/* FIXED: Added onClick handler for individual puppy buttons */}
-                <button 
-                  onClick={() => goToPuppyDetail(puppy.name)}
-                  style={{
-                    background: 'linear-gradient(135deg, #D4AF37 0%, #B8941F 100%)',
-                    color: 'white',
-                    border: 'none',
-                    padding: '0.75rem 2rem',
-                    borderRadius: '8px',
-                    cursor: 'pointer',
-                    fontWeight: '600',
-                    fontSize: '1rem',
-                    textTransform: 'uppercase',
-                    transition: 'transform 0.2s ease'
-                  }}
-                  onMouseOver={(e) => e.target.style.transform = 'translateY(-2px)'}
-                  onMouseOut={(e) => e.target.style.transform = 'translateY(0)'}
+
+                <div className="puppy-price">{formatPrice(puppy.price)}</div>
+
+                <div className="health-badge">
+                  <Award className="health-icon" />
+                  <span>Health Tested Parents</span>
+                </div>
+
+                {/* Updated to use Button component and proper navigation */}
+                <Button 
+                  variant="primary" 
+                  size="medium"
+                  className="puppy-cta"
+                  onClick={() => handlePuppyClick(puppy.id)}
                 >
                   Meet {puppy.name}
-                </button>
+                </Button>
               </div>
             </div>
           ))}
         </div>
-        
-        {/* FIXED: Added onClick handler for "View All Available Puppies" button */}
-        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <button 
-            onClick={goToPuppiesPage}
-            style={{
-              background: 'transparent',
-              color: '#1B365D',
-              border: '2px solid #1B365D',
-              padding: '1rem 2rem',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              fontWeight: '600',
-              fontSize: '1rem',
-              textTransform: 'uppercase',
-              transition: 'all 0.3s ease'
-            }}
-            onMouseOver={(e) => {
-              e.target.style.background = '#1B365D'
-              e.target.style.color = 'white'
-              e.target.style.transform = 'translateY(-2px)'
-            }}
-            onMouseOut={(e) => {
-              e.target.style.background = 'transparent'
-              e.target.style.color = '#1B365D'
-              e.target.style.transform = 'translateY(0)'
-            }}
+
+        <div className="section-footer">
+          {/* Updated to use Button component */}
+          <Button 
+            variant="secondary" 
+            size="large"
+            onClick={handleViewAllPuppies}
           >
             View All Available Puppies
-          </button>
+          </Button>
         </div>
       </div>
     </section>

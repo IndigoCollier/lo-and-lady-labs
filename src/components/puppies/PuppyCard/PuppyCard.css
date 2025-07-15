@@ -16,7 +16,6 @@
 .puppy-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 50px rgba(27, 54, 93, 0.15);
-  /* REMOVED: Any opacity or visibility changes that could hide the card */
 }
 
 .puppy-card.compact {
@@ -45,7 +44,6 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
-  /* FIXED: Only transform on transition, no opacity changes */
 }
 
 .puppy-image.loading {
@@ -56,8 +54,47 @@
   opacity: 1;
 }
 
-/* SIMPLIFIED: Only scale the image, don't affect card visibility */
 .puppy-card:hover .puppy-image.loaded {
+  transform: scale(1.05);
+}
+
+/* NEW: Image Overlay for Navigation */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(27, 54, 93, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.puppy-image-container:hover .image-overlay {
+  opacity: 1;
+}
+
+.view-details-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1B365D;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.view-details-btn:hover {
+  background: #FFFFFF;
   transform: scale(1.05);
 }
 
@@ -255,6 +292,7 @@
   gap: 0.5rem;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .personality-tag {
@@ -266,6 +304,12 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.25px;
+}
+
+.personality-more {
+  font-size: 0.75rem;
+  color: #6c757d;
+  font-style: italic;
 }
 
 .puppy-ready-date {
@@ -302,9 +346,17 @@
   color: #9AA0A6;
 }
 
-.puppy-cta {
+/* NEW: Card Actions for Navigation */
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.puppy-cta,
+.inquire-button {
   width: 100%;
-  margin-top: auto;
 }
 
 /* Responsive Design */
@@ -315,6 +367,17 @@
   
   .puppy-image-container {
     height: 240px;
+  }
+  
+  /* Always show overlay on mobile */
+  .image-overlay {
+    opacity: 1;
+    background: rgba(27, 54, 93, 0.6);
+  }
+  
+  .view-details-btn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.875rem;
   }
   
   .puppy-info {
@@ -341,12 +404,19 @@
     font-size: 0.7rem;
     padding: 0.2rem 0.6rem;
   }
+  
+  .card-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .puppy-card,
-  .puppy-image {
+  .puppy-image,
+  .image-overlay,
+  .view-details-btn {
     transition: none !important;
   }
   

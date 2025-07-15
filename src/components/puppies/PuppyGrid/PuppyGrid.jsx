@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Grid, List, SortAsc, SortDesc, Heart, Star, Calendar } from 'lucide-react'
 import PuppyCard from '../PuppyCard'
 import { useFavorites } from '../../../hooks/useFavorites'
@@ -8,7 +9,7 @@ import './PuppyGrid.css'
 function PuppyGrid({
   puppies = [],
   loading = false,
-  onViewDetails,
+  onViewDetails, // Keep for backward compatibility but PuppyCard handles its own navigation now
   emptyMessage = "No puppies found",
   showControls = true,
   defaultColumns = 3,
@@ -17,6 +18,7 @@ function PuppyGrid({
   allowViewToggle = true,
   className = ''
 }) {
+  const navigate = useNavigate()
   const { toggleFavorite, isFavorite, favorites } = useFavorites()
   const { viewPreferences, updateViewPreferences } = useViewPreferences()
   const [hoveredCard, setHoveredCard] = useState(null)
@@ -58,11 +60,15 @@ function PuppyGrid({
     }
   }, [])
 
+  // Navigation handler - PuppyCard now handles its own navigation
   const handleViewDetails = useCallback((puppyId) => {
     if (onViewDetails) {
       onViewDetails(puppyId)
+    } else {
+      // Fallback navigation if no handler provided
+      navigate(`/puppies/${puppyId}`)
     }
-  }, [onViewDetails])
+  }, [onViewDetails, navigate])
 
   const handleFavoriteToggle = useCallback((puppyId) => {
     toggleFavorite(puppyId)
@@ -342,6 +348,8 @@ function PuppyGrid({
               onToggleFavorite={handleFavoriteToggle}
               isFavorite={isFavorite(puppy.id)}
               size={viewMode === 'list' ? 'compact' : 'standard'}
+              showDetails={true}
+              showInquireButton={true}
             />
           </div>
         ))}

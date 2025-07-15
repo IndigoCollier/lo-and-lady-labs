@@ -1,11 +1,13 @@
+
 import React, { useState, useEffect } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams, useNavigate } from 'react-router-dom'
 import { Search, Filter, X } from 'lucide-react'
 import PuppyGrid from '../../components/puppies/PuppyGrid'
 import { mockPuppies } from '../../data/mockPuppies'
 import './Puppies.css'
 
 function Puppies() {
+  const navigate = useNavigate()
   const [puppies, setPuppies] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -121,7 +123,7 @@ function Puppies() {
           case 'availability':
             return mappedSearch.value === 'available' ? puppy.available : !puppy.available
           case 'age':
-            const ageInWeeks = parseInt(puppy.age)
+            const ageInWeeks = puppy.ageInWeeks || parseInt(puppy.age)
             switch (mappedSearch.value) {
               case 'under-8': return ageInWeeks < 8
               case 'over-10': return ageInWeeks > 10
@@ -185,7 +187,7 @@ function Puppies() {
 
     // Age filter
     const matchesAge = !activeFilters.age || (() => {
-      const ageInWeeks = parseInt(puppy.age)
+      const ageInWeeks = puppy.ageInWeeks || parseInt(puppy.age)
       switch (activeFilters.age) {
         case 'under-8': return ageInWeeks < 8
         case '8-10': return ageInWeeks >= 8 && ageInWeeks <= 10
@@ -244,10 +246,10 @@ function Puppies() {
     return Object.values(activeFilters).filter(Boolean).length + (searchTerm ? 1 : 0)
   }
 
-  const handleViewDetails = (puppyId) => {
-    console.log('Navigate to puppy detail:', puppyId)
-    alert(`Viewing details for puppy ID: ${puppyId}. This will navigate to the detail page once routing is implemented.`)
-  }
+  // UPDATED: Replace the old handleViewDetails with proper navigation
+const handleViewDetails = (puppyId) => {
+  navigate(`/puppies/${puppyId}`)
+}
 
   if (error) {
     return (
