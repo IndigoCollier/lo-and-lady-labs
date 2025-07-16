@@ -1,0 +1,348 @@
+.team-section {
+  padding: 6rem 0;
+  background: #FFFFFF;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-icon {
+  width: 48px;
+  height: 48px;
+  color: #D4AF37;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #1B365D;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: #5F6368;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  margin-bottom: 6rem;
+}
+
+.team-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(27, 54, 93, 0.1);
+  transition: all 0.4s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(27, 54, 93, 0.15);
+}
+
+.member-image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover .member-image img {
+  transform: scale(1.05);
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #F8F9FA, #E8EAED);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9AA0A6;
+}
+
+.placeholder-icon {
+  width: 48px;
+  height: 48px;
+}
+
+.member-info {
+  padding: 2rem;
+}
+
+.member-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1B365D;
+  margin: 0 0 0.5rem 0;
+}
+
+.member-role {
+  font-size: 1rem;
+  color: #4A90E2;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.member-bio {
+  margin-bottom: 2rem;
+}
+
+.member-bio p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #3C4043;
+  margin: 0;
+}
+
+.member-specialties,
+.member-credentials {
+  margin-bottom: 2rem;
+}
+
+.member-specialties:last-child,
+.member-credentials:last-child {
+  margin-bottom: 0;
+}
+
+.member-specialties h4,
+.member-credentials h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1B365D;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.specialties-list,
+.credentials-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.specialty-item,
+.credential-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: #3C4043;
+  padding: 0.5rem 0;
+}
+
+.specialty-icon {
+  width: 16px;
+  height: 16px;
+  color: #FF6B8A;
+  flex-shrink: 0;
+}
+
+.credential-icon {
+  width: 16px;
+  height: 16px;
+  color: #D4AF37;
+  flex-shrink: 0;
+}
+
+.philosophy-section {
+  background: linear-gradient(135deg, #F5E6D3 0%, #FFFFFF 100%);
+  border-radius: 20px;
+  padding: 4rem;
+  border: 2px solid #E8EAED;
+}
+
+.philosophy-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.philosophy-icon {
+  width: 48px;
+  height: 48px;
+  color: #4A90E2;
+  margin-bottom: 1rem;
+}
+
+.philosophy-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1B365D;
+  margin: 0;
+}
+
+.philosophy-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mission-statement {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.mission-statement h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1B365D;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.mission-statement p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #3C4043;
+  margin: 0;
+  font-style: italic;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.value-card {
+  background: #FFFFFF;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(27, 54, 93, 0.08);
+  border-left: 4px solid #4A90E2;
+  transition: all 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(27, 54, 93, 0.12);
+}
+
+.value-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1B365D;
+  margin: 0 0 1rem 0;
+}
+
+.value-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #3C4043;
+  margin: 0;
+}
+
+.commitment-statement {
+  text-align: center;
+  background: linear-gradient(135deg, #1B365D, #4A90E2);
+  padding: 3rem;
+  border-radius: 16px;
+  color: #FFFFFF;
+}
+
+.commitment-statement blockquote {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  font-style: italic;
+  margin: 0;
+  quotes: '"' '"';
+}
+
+.commitment-statement blockquote::before {
+  content: open-quote;
+  font-size: 2rem;
+  color: #D4AF37;
+  margin-right: 0.5rem;
+}
+
+.commitment-statement blockquote::after {
+  content: close-quote;
+  font-size: 2rem;
+  color: #D4AF37;
+  margin-left: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .philosophy-section {
+    padding: 3rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-section {
+    padding: 4rem 0;
+  }
+  
+  .team-grid {
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .member-image {
+    height: 250px;
+  }
+  
+  .member-info {
+    padding: 1.5rem;
+  }
+  
+  .philosophy-section {
+    padding: 2rem;
+  }
+  
+  .mission-statement {
+    margin-bottom: 2rem;
+  }
+  
+  .values-grid {
+    margin-bottom: 2rem;
+  }
+  
+  .value-card {
+    padding: 1.5rem;
+  }
+  
+  .commitment-statement {
+    padding: 2rem;
+  }
+  
+  .commitment-statement blockquote {
+    font-size: 1.125rem;
+  }
+}
