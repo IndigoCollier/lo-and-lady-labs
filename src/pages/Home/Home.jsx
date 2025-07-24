@@ -42,7 +42,7 @@ function Home() {
           <div className="section-header">
             <Crown className="section-icon" />
             <h2 className="section-title">Why Choose Lo and Lady Labs?</h2>
-            <p className="section-subtitle">
+            <p className="hero-subtitle">
               We're committed to raising healthy, happy labradoodles with exceptional care
             </p>
           </div>
@@ -97,7 +97,7 @@ function Home() {
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Find Your Perfect Match</h2>
-            <p className="section-subtitle">
+            <p className="hero-subtitle">
               Use our quick filters to find puppies that match your preferences
             </p>
           </div>

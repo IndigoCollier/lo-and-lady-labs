@@ -92,7 +92,7 @@ function QuickSearch() {
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">Find Your Perfect Match</h2>
-          <p className="section-subtitle">
+          <p className="hero-subtitle">
             Search our available puppies or browse by your preferences
           </p>
         </div>

@@ -25,7 +25,7 @@ function FeaturedPuppies() {
         <div className="section-header">
           <Crown className="section-icon" />
           <h2 className="section-title">Meet Our Available Puppies</h2>
-          <p className="section-subtitle">
+          <p className="hero-subtitle">
             Each puppy is lovingly raised and ready for their forever home
           </p>
         </div>

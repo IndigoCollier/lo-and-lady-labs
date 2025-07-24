@@ -9,7 +9,7 @@ function TeamSection({ teamMembers, breedingPhilosophy }) {
         <div className="section-header">
           <Users className="section-icon" />
           <h2 className="section-title">Meet Our Team</h2>
-          <p className="section-subtitle">
+          <p className="hero-subtitle">
             Dedicated professionals committed to raising healthy, happy labradoodles
           </p>
         </div>
@@ -35,9 +35,14 @@ function TeamSection({ teamMembers, breedingPhilosophy }) {
                 <h3 className="member-name">{member.name}</h3>
                 <p className="member-role">{member.role}</p>
                 
-                <div className="member-bio">
-                  <p>{member.bio}</p>
-                </div>
+                 {/* Handle multi-line bio display */}
+                 <div className="member-bio">
+                 {member.bio.split('\n\n').map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                   ))}
+                 </div>
+
+                 <blockquote className='member-bio bio-quote'>"{member.quote}"</blockquote>
                 
                 <div className="member-specialties">
                   <h4>Specialties:</h4>

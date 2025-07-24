@@ -79,7 +79,7 @@ function About() {
         <div className="container">
           <div className="section-header">
             <h2 className="section-title">Why Choose Lo and Lady Labs?</h2>
-            <p className="section-subtitle">
+            <p className="hero-subtitle">
               What sets us apart in the world of labradoodle breeding
             </p>
           </div>

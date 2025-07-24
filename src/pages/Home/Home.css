@@ -44,10 +44,9 @@
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr) !important;
   gap: 2.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  margin-bottom: 4rem;
 }
 
 .feature-card {
@@ -99,6 +98,8 @@
   background: linear-gradient(135deg, #F5E6D3 0%, #FFFFFF 100%);
   color: #1B365D;
   text-align: center;
+  border-top: 2px solid goldenrod;
+  border-bottom: 2px solid goldenrod;
 }
 
 .cta-content {
@@ -116,7 +117,7 @@
 .cta-description {
   font-size: 1.25rem;
   margin-bottom: 3rem;
-  color: #1B365D;
+  color: linear-gradient(135deg, #F5E6D3 0%, #FFFFFF 100%);
   line-height: 1.5;
 }
 

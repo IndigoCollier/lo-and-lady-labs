@@ -77,6 +77,27 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+/* Global section styling - Force center alignment */
+.section-title,
+h2.section-title,
+h3.section-title {
+  text-align: center !important;
+}
+
+.section-subtitle,
+p.section-subtitle {
+  text-align: center !important;
+}
+
+.section-header {
+  text-align: center !important;
+}
+
+.section-header .section-title,
+.section-header .section-subtitle {
+  text-align: center !important;
+}
+
 /* Typography responsive scaling */
 @media (max-width: 768px) {
   .section-title {

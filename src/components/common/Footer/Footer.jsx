@@ -1,4 +1,5 @@
 import { Crown, Mail, Phone, MapPin } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -30,7 +31,7 @@ function Footer() {
                 height: '28px',
                 filter: 'drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3))'
               }} />
-              <span Link to="/" style={{ color: '#FFFFFF' }}>Lo and Lady Labs</span>
+              <Link to="/" style={{ color: '#FFFFFF', textDecoration: 'none' }}>Lo and Lady Labs</Link>
             </div>
             <p style={{ 
               color: '#F5E6D3', 

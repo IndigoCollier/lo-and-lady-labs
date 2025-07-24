@@ -36,6 +36,8 @@
   color: #5F6368;
   line-height: 1.6;
   margin-bottom: 3rem;
+  align-items: center;
+  
 }
 
 .hero-stats {
@@ -68,6 +70,7 @@
 .hero-image {
   position: relative;
   height: 500px;
+  width: 500px;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(27, 54, 93, 0.2);
@@ -89,6 +92,7 @@
   justify-content: center;
   color: #9AA0A6;
   gap: 1rem;
+  /* border: 1px solid #470429; */
 }
 
 .placeholder-icon {
@@ -142,6 +146,7 @@
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
+  align-items: center !important;
 }
 
 .section-title {
@@ -149,14 +154,16 @@
   color: #1B365D;
   font-weight: 700;
   margin-bottom: 1rem;
+  align-items: center;
 }
 
 .section-subtitle {
   font-size: 1.25rem;
-  color: #5F6368;
+  color:#5F6368;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+  align-items: center !important;
 }
 
 .features-grid {
@@ -172,6 +179,7 @@
   text-align: center;
   box-shadow: 0 8px 30px rgba(27, 54, 93, 0.1);
   transition: all 0.4s ease;
+   border: .1rem solid #470429;
 }
 
 .feature-card:hover {
@@ -201,6 +209,7 @@
   color: #1B365D;
   font-weight: 700;
   margin-bottom: 1rem;
+ 
 }
 
 .feature-description {

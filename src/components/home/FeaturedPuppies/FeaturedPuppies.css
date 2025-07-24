@@ -17,6 +17,8 @@
   color: #1B365D;
   font-weight: 700;
   margin-bottom: 1rem;
+  text-align: center;
+  align-items: center;
 }
 
 .section-subtitle {
@@ -24,6 +26,9 @@
   color: #3C4043;
   max-width: 600px;
   margin: 0 auto;
+  text-align: center;
+  align-items: center !important;
+ 
 }
 
 .puppies-grid {

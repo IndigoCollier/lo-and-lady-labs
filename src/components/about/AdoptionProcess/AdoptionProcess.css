@@ -76,10 +76,13 @@
   position: relative;
   z-index: 2;
   transition: all 0.3s ease;
+  
 }
 
 .process-step:hover .step-content {
   box-shadow: 0 16px 40px rgba(27, 54, 93, 0.15);
+    
+
 }
 
 .step-header {
