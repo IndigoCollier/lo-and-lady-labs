@@ -60,7 +60,7 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
-  margin-top: 0rem;
+  margin-top: 1rem;
 }
 
 .tab-button {
@@ -119,6 +119,7 @@
   min-width: 320px;
   width: 100%;
   padding: 1.25rem 1.65rem;
+
 }
 
 .contact-card:hover {
@@ -333,6 +334,7 @@
 .section-header {
   text-align: center;
   margin-bottom: 1rem;
+ 
 }
 
 .section-header h2 {
