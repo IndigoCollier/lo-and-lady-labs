@@ -6,6 +6,7 @@ import AdoptionStatus from '../AdoptionStatus'
 import Button from '../../common/Button'
 import PuppyInquiryForm from '../../forms/PuppyInquiryForm'
 import { formatPrice } from '../../../data/mockPuppies'
+import { getImagePath } from '../../../utils/imageHelpers'
 import './PuppyCard.css'
 
 function PuppyCard({ 
@@ -89,7 +90,7 @@ function PuppyCard({
               </div>
             ) : (
               <img
-                src={puppy.image}
+                src={getImagePath(puppy.image)}
                 alt={`${puppy.name} - ${puppy.color} labradoodle`}
                 className={`puppy-image ${imageLoaded ? 'loaded' : 'loading'}`}
                 onLoad={handleImageLoad}

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Crown, Heart, Star, Calendar, Award } from 'lucide-react'
 import Button from '../../common/Button'
 import { getFeaturedPuppies, formatPrice } from '../../../data/mockPuppies'
+import { getImagePath } from '../../../utils/imageHelpers'
 import './FeaturedPuppies.css'
 
 function FeaturedPuppies() {
@@ -35,7 +36,7 @@ function FeaturedPuppies() {
             <div key={puppy.id} className="puppy-card">
               <div className="puppy-image-container">
                 <img 
-                  src={puppy.image} 
+                  src={getImagePath(puppy.image)} 
                   alt={puppy.name} 
                   className="puppy-image"
                   onClick={() => handlePuppyClick(puppy.id)}

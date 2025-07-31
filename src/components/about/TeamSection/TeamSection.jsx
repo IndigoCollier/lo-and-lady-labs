@@ -1,5 +1,6 @@
 import React from 'react'
 import { Award, Heart, Users, Shield } from 'lucide-react'
+import { getImagePath } from '../../../utils/imageHelpers'
 import './TeamSection.css'
 
 function TeamSection({ teamMembers, breedingPhilosophy }) {
@@ -19,7 +20,7 @@ function TeamSection({ teamMembers, breedingPhilosophy }) {
             <div key={member.id} className="team-card">
               <div className="member-image">
                 <img 
-                  src={member.image} 
+                  src={getImagePath(member.image)} 
                   alt={member.name}
                   onError={(e) => {
                     e.target.style.display = 'none'

@@ -20,6 +20,7 @@ import PhotoGallery from '../../components/puppies/PhotoGallery'
 import PuppyInquiryForm from '../../components/forms/PuppyInquiryForm'
 import Button from '../../components/common/Button'
 import { getPuppyById, getRelatedPuppies, formatPrice } from '../../data/mockPuppies'
+import { getImagePath } from '../../utils/imageHelpers'
 import './PuppyDetail.css'
 
 function PuppyDetail() {
@@ -402,7 +403,7 @@ function PuppyDetail() {
               {relatedPuppies.map(relatedPuppy => (
                 <div key={relatedPuppy.id} className="related-puppy-card">
                   <img 
-                    src={relatedPuppy.image} 
+                    src={getImagePath(relatedPuppy.image)} 
                     alt={relatedPuppy.name}
                     onClick={() => navigate(`/puppies/${relatedPuppy.id}`)}
                   />

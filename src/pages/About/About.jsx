@@ -7,6 +7,7 @@ import DonationWidget from '../../components/common/DonationWidget'
 import Button from '../../components/common/Button'
 import { getAdoptionSteps } from '../../data/adoptionProcess'
 import { getTeamMembers, getBreedingPhilosophy } from '../../data/teamInfo'
+import { getImagePath } from '../../utils/imageHelpers'
 import './About.css'
 
 function About() {
@@ -42,7 +43,7 @@ function About() {
             </div>
             <div className="hero-image">
               <img 
-                src="./images/about/about-page-puppies.png" 
+                src={getImagePath("images/about/about-page-puppies.png")} 
                 alt="Lo and Lady Labs - Happy labradoodle family"
                 onError={(e) => {
                   e.target.style.display = 'none'

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react'
+import { getImagePath, processImagePaths } from '../../../utils/imageHelpers'
 import './PhotoGallery.css'
 
 function PhotoGallery({ 
@@ -14,8 +15,11 @@ function PhotoGallery({
   const [isLightboxOpen, setIsLightboxOpen] = useState(false)
 
   // Fallback to single image if gallery not available
-  const galleryImages = images.length > 0 ? images : 
+  const rawImages = images.length > 0 ? images : 
     (puppy?.galleryImages || [puppy?.image].filter(Boolean))
+  
+  // Process all image paths to work with base URL
+  const galleryImages = processImagePaths(rawImages)
 
   if (!galleryImages.length) {
     return (

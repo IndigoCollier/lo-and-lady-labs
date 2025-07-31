@@ -4,6 +4,7 @@ import FormField from '../FormField'
 import Modal from '../Modal'
 import Button from '../../common/Button'
 import useFormValidation from '../../../hooks/useFormValidation'
+import { getImagePath } from '../../../utils/imageHelpers'
 import './PuppyInquiryForm.css'
 
 const initialFormValues = {
@@ -177,7 +178,7 @@ function PuppyInquiryForm({ puppy, isOpen, onClose, onSuccess }) {
       <div className="inquiry-form-container">
         {puppy && (
           <div className="puppy-summary">
-            <img src={puppy.image} alt={puppy.name} className="puppy-image" />
+            <img src={getImagePath(puppy.image)} alt={puppy.name} className="puppy-image" />
             <div className="puppy-info">
               <h3>{puppy.name}</h3>
               <p>{puppy.age} • {puppy.gender} • {puppy.color}</p>

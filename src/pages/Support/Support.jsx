@@ -3,6 +3,7 @@ import { Heart, Users, Phone, MessageCircle, ExternalLink, Shield, Award, Star }
 import DonationWidget from '../../components/common/DonationWidget'
 import DonationModal from '../../components/common/DonationModal'
 import Button from '../../components/common/Button'
+import { getImagePath } from '../../utils/imageHelpers'
 import './Support.css'
 
 const mentalHealthResources = [
@@ -116,7 +117,7 @@ function Support() {
             </div>
             <div className="hero-image">
               <img 
-                src="./images/support/therapy-dog-and-child.png" 
+                src={getImagePath("images/support/therapy-dog-and-child.png")} 
                 alt="Therapy dog providing comfort to a child"
                 className="hero-img"
               />
