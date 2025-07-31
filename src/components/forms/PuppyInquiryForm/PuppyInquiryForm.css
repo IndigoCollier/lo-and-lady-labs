@@ -18,7 +18,7 @@
   height: 80px;
   border-radius: 12px;
   object-fit: cover;
-  border: 3px solid #FFFFFF;
+  border: 1.5px solid goldenrod;
   box-shadow: 0 4px 12px rgba(27, 54, 93, 0.1);
 }
 
@@ -27,16 +27,18 @@
 }
 
 .puppy-info h3 {
-  color: #1B365D;
-  font-size: 1.25rem;
+  color:#1B365D;
+  font-size: 2rem;
   font-weight: 700;
   margin: 0 0 0.25rem 0;
+  text-align: center;
 }
 
 .puppy-info p {
   color: #5F6368;
   margin: 0;
-  font-size: 0.875rem;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 .puppy-price {
@@ -48,8 +50,8 @@
 
 .heart-icon {
   color: #FF6B8A;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
 }
 
@@ -57,6 +59,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin: auto 3rem;
 }
 
 .form-section {
@@ -78,6 +81,8 @@
   border-bottom: 2px solid #4A90E2;
   display: inline-block;
 }
+
+
 
 .form-row {
   display: grid;

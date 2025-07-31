@@ -38,6 +38,7 @@
 .contact-title  {
   margin-bottom: 0;
   padding-bottom: 0; 
+  
 }
 
 .hero-subtitle {
@@ -127,23 +128,27 @@
 
 .card-header {
   background: linear-gradient(135deg, #1B365D, #4A90E2);
-  color: #FFFFFF;
+  color: #FFFFFF ;
   padding: 1.5rem;
   display: flex;
   align-items: center;
   gap: 1rem;
   border-radius: 10px;
+ 
 }
 
 .card-icon {
   width: 24px;
   height: 24px;
+  color: pink;
+  flex-shrink: 0;
 }
 
 .card-header h3 {
   font-size: 1.25rem;
   font-weight: 600;
   margin: 0;
+  color: white;
 }
 
 .contact-person,
@@ -206,6 +211,7 @@
   border-radius: 8px;
   color: #1B365D;
   font-weight: 500;
+  font-size: medium;
 }
 
 .method-icon {
@@ -271,6 +277,7 @@
   color: #5F6368;
   margin: 0.5rem 0 0 0;
   line-height: 1.4;
+  font-size: 1rem;
 }
 
 .visiting-hours h5 {
@@ -279,13 +286,14 @@
   margin: 0 0 1rem 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  font-size: 0.875rem;
+  font-size: 1rem;
 }
 
 .visiting-hours p {
   color: #3C4043;
   margin: 0 0 0.5rem 0;
   line-height: 1.4;
+  font-size: 1rem;
 }
 
 .visiting-note {

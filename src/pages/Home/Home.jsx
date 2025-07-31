@@ -96,7 +96,7 @@ function Home() {
       <section className="quick-filter-section">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Find Your Perfect Match</h2>
+            <h2 className="section-title">Quickly Find Your Puppy</h2>
             <p className="hero-subtitle">
               Use our quick filters to find puppies that match your preferences
             </p>
@@ -112,7 +112,7 @@ function Home() {
             >
               <span className="filter-icon">🐕</span>
               <span className="filter-text">
-                <strong>Male Puppies</strong>
+                <p>Male Puppies</p>
                 <small>Energetic & Loyal</small>
               </span>
             </Button>

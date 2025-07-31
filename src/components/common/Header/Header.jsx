@@ -99,6 +99,21 @@ function Header() {
               About Us
             </Link>
             <Link 
+              to="/support" 
+              style={{
+                textDecoration: 'none',
+                color: isActive('/support') ? '#D4AF37' : '#1B365D',
+                fontWeight: '600',
+                padding: '0.75rem 0',
+                borderBottom: isActive('/support') ? '3px solid #D4AF37' : '3px solid transparent',
+                transition: 'all 0.3s ease',
+                fontSize: '1rem',
+                letterSpacing: '0.025em'
+              }}
+            >
+              Support
+            </Link>
+            <Link 
               to="/contact" 
               style={{
                 textDecoration: 'none',

@@ -1,8 +1,9 @@
 import React from 'react'
-import { Heart, Award, Users, Shield } from 'lucide-react'
+import { Heart, Award, Users, Shield, Phone, MessageSquare, ExternalLink } from 'lucide-react'
 import TestimonialSection from '../../components/home/TestimonialSection'
 import AdoptionProcess from '../../components/about/AdoptionProcess'
 import TeamSection from '../../components/about/TeamSection'
+import DonationWidget from '../../components/common/DonationWidget'
 import Button from '../../components/common/Button'
 import { getAdoptionSteps } from '../../data/adoptionProcess'
 import { getTeamMembers, getBreedingPhilosophy } from '../../data/teamInfo'
@@ -41,7 +42,7 @@ function About() {
             </div>
             <div className="hero-image">
               <img 
-                src="/images/about/hero-image.jpg" 
+                src="/images/about/about-page-puppies.png" 
                 alt="Lo and Lady Labs - Happy labradoodle family"
                 onError={(e) => {
                   e.target.style.display = 'none'
@@ -135,6 +136,96 @@ function About() {
 
       {/* Team Section */}
       <TeamSection teamMembers={teamMembers} breedingPhilosophy={breedingPhilosophy} />
+
+      {/* Community Impact Section */}
+      <section className="community-impact-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Our Community Impact</h2>
+            <p className="hero-subtitle">
+              Beyond breeding exceptional labradoodles, we're committed to supporting mental health awareness and providing resources for our community.
+            </p>
+          </div>
+          
+          <div className="impact-content">
+            <div className="impact-story">
+              <div className="story-text">
+                <h3 className="story-title">Therapy Dogs Making a Difference</h3>
+                <p className="story-description">
+                  Many of our labradoodles go on to become certified therapy dogs, providing comfort and support in hospitals, schools, and crisis situations. 
+                  Their gentle temperaments and natural empathy make them perfect companions for those facing mental health challenges.
+                </p>
+                
+                <div className="impact-stats">
+                  <div className="impact-stat">
+                    <span className="stat-number">50+</span>
+                    <span className="stat-label">Therapy Dogs Trained</span>
+                  </div>
+                  <div className="impact-stat">
+                    <span className="stat-number">25+</span>
+                    <span className="stat-label">Partner Organizations</span>
+                  </div>
+                  <div className="impact-stat">
+                    <span className="stat-number">1,000+</span>
+                    <span className="stat-label">Lives Touched</span>
+                  </div>
+                </div>
+
+                <div className="crisis-resources">
+                  <h4 className="resources-title">Mental Health Resources</h4>
+                  <p className="resources-description">
+                    If you or someone you know needs immediate support, these resources are available 24/7:
+                  </p>
+                  <div className="resource-links">
+                    <a 
+                      href="tel:988" 
+                      className="resource-link crisis"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (confirm('Call National Suicide Prevention Lifeline at 988?')) {
+                          window.location.href = 'tel:988';
+                        }
+                      }}
+                    >
+                      <Phone className="resource-icon" />
+                      <span>Crisis Lifeline: 988</span>
+                    </a>
+                    <a 
+                      href="#" 
+                      className="resource-link text"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        alert('To access Crisis Text Line, send a text message:\n\nText HOME to 741741');
+                      }}
+                    >
+                      <MessageSquare className="resource-icon" />
+                      <span>Crisis Text: 741741</span>
+                    </a>
+                    <Button
+                      variant="outline"
+                      size="medium"
+                      onClick={() => window.location.href = '/support'}
+                      className="support-page-link"
+                    >
+                      <ExternalLink className="button-icon" />
+                      View All Resources
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="donation-widget-container">
+              <DonationWidget 
+                variant="compact" 
+                showTitle={true}
+                backgroundColor="light"
+                className="about-donation-widget"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Testimonials */}
       <TestimonialSection />

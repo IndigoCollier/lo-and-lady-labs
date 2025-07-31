@@ -1,0 +1,110 @@
+.loading-spinner-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.loading-spinner {
+  display: inline-block;
+  position: relative;
+}
+
+.spinner-circle {
+  border-radius: 50%;
+  border-style: solid;
+  animation: spin 1s linear infinite;
+}
+
+/* Size variations */
+.loading-spinner.small .spinner-circle {
+  width: 20px;
+  height: 20px;
+  border-width: 2px;
+}
+
+.loading-spinner.medium .spinner-circle {
+  width: 32px;
+  height: 32px;
+  border-width: 3px;
+}
+
+.loading-spinner.large .spinner-circle {
+  width: 48px;
+  height: 48px;
+  border-width: 4px;
+}
+
+/* Color variations */
+.loading-spinner.primary .spinner-circle {
+  border-color: rgba(74, 144, 226, 0.3);
+  border-top-color: #4A90E2;
+}
+
+.loading-spinner.secondary .spinner-circle {
+  border-color: rgba(104, 182, 132, 0.3);
+  border-top-color: #68B684;
+}
+
+.loading-spinner.white .spinner-circle {
+  border-color: rgba(255, 255, 255, 0.3);
+  border-top-color: #FFFFFF;
+}
+
+.loading-spinner.dark .spinner-circle {
+  border-color: rgba(27, 54, 93, 0.3);
+  border-top-color: #1B365D;
+}
+
+.loading-text {
+  color: #5F6368;
+  font-size: 0.875rem;
+  margin: 0;
+  text-align: center;
+}
+
+/* Animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loading container for page-level loading */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.loading-container .loading-text {
+  font-size: 1rem;
+  color: #1B365D;
+  margin-top: 1rem;
+}
+
+/* Overlay loading */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.loading-overlay .loading-spinner-wrapper {
+  background: #FFFFFF;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(27, 54, 93, 0.1);
+}

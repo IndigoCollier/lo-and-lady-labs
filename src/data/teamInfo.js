@@ -31,7 +31,7 @@ export const teamMembers = [
 ]
 
 export const breedingPhilosophy = {
-  mission: "To breed exceptional labradoodles that combine the best qualities of Golden Retrievers and Poodles, creating healthy, intelligent, and loving family companions.",
+  mission: "To breed exceptional labradoodles that combine the best qualities of Labradors and Poodles, creating healthy, intelligent, and loving family companions.",
   values: [
     {
       title: "Health First",

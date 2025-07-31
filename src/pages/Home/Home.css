@@ -305,8 +305,10 @@
   min-height: 80px;
   transition: all 0.3s ease;
   border-radius: 16px !important;
+  border: 2px solid #1B365D;
   position: relative;
   overflow: hidden;
+  color: #1B365D;
 }
 
 .filter-button:hover {

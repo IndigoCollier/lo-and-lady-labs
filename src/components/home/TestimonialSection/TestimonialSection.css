@@ -4,6 +4,7 @@
   color: #FFFFFF;
   position: relative;
   overflow: hidden;
+  border-top: 2px solid goldenrod;
 }
 
 .testimonial-section::before {

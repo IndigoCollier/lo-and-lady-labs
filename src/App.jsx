@@ -5,6 +5,7 @@ import Puppies from './pages/Puppies'
 import PuppyDetail from './pages/PuppyDetail'  
 import About from './pages/About'
 import Contact from './pages/Contact'
+import Support from './pages/Support'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
          <Route path="/puppies/:id" element={<PuppyDetail />} />  
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/support" element={<Support />} />
       </Routes>
     </Layout>
   )

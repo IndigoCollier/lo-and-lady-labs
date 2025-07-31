@@ -1,6 +1,7 @@
 .quick-search-section {
   padding: 6rem 0;
   background: linear-gradient(135deg, #F5E6D3 0%, #FFFFFF 100%);
+  border-top: 1px solid goldenrod;
 }
 
 .section-header {

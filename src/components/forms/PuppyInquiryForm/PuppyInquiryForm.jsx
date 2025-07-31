@@ -189,7 +189,7 @@ function PuppyInquiryForm({ puppy, isOpen, onClose, onSuccess }) {
 
         <form onSubmit={handleFormSubmit} className="inquiry-form">
           <div className="form-section">
-            <h4 className="section-title">Personal Information</h4>
+            <h4 className="section-title form-title">Personal Information</h4>
             <div className="form-row">
               <FormField
                 label="First Name"

@@ -1,0 +1,619 @@
+/* Support Page Styles - Maintaining existing design system */
+.support-page {
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.support-hero {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #F5E6D3 0%, #FFFFFF 50%, #F5E6D3 100%);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid goldenrod;
+  align-items: center;
+}
+
+.support-hero .hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.support-hero .hero-text {
+  padding-right: 2rem;
+  align-items: center;
+}
+
+.support-hero .hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #1B365D;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.support-hero .hero-subtitle {
+  font-size: 1.25rem;
+  color: #5F6368;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.support-hero .hero-stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.support-hero .stat-item {
+  text-align: center;
+  flex: 1;
+  min-width: 120px;
+}
+
+.support-hero .stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #D4AF37;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.support-hero .stat-label {
+  font-size: 0.875rem;
+  color: #5F6368;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.support-hero .hero-image {
+  position: relative;
+  height: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(27, 54, 93, 0.2);
+  border: 1.5px solid goldenrod;
+}
+
+.support-hero .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Crisis Resources Section */
+.crisis-resources {
+  padding: 6rem 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid goldenrod;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #1B365D;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: #5F6368;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.resources-grid {
+   display: grid;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.resource-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(27, 54, 93, 0.1);
+  border: 2px solid #E8EAED;
+  transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(27, 54, 93, 0.15);
+  border-color: #4A90E2;
+}
+
+.resource-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.resource-type {
+  background: linear-gradient(135deg, #4A90E2, #68B684);
+  color: #FFFFFF;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resource-availability {
+  background: rgba(212, 175, 55, 0.1);
+  color: #D4AF37;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resource-name {
+  font-size: 1.5rem;
+  color: #1B365D;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.resource-description {
+  font-size: 1rem;
+  color: #5F6368;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.resource-contact {
+  margin-top: auto;
+}
+
+.contact-button {
+  width: 100%;
+}
+
+.emergency-notice {
+  background: linear-gradient(135deg, #E53E3E, #FC8181);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.notice-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: #FFFFFF;
+}
+
+.notice-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.notice-text h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.notice-text p {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Therapy Programs Section */
+.therapy-programs {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #F5E6D3 0%, #FFFFFF 50%, #F5E6D3 100%);
+  border-bottom: 1px solid goldenrod;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.program-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 2.5rem;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(27, 54, 93, 0.1);
+  border: 2px solid #E8EAED;
+  transition: all 0.4s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(27, 54, 93, 0.15);
+  border-color: #4A90E2;
+}
+
+.program-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #4A90E2, #68B684);
+  border-radius: 20px;
+  margin: 0 auto 1.5rem;
+  color: #FFFFFF;
+}
+
+.program-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.program-title {
+  font-size: 1.5rem;
+  color: #1B365D;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.program-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #5F6368;
+  margin-bottom: 1.5rem;
+}
+
+.program-impact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(212, 175, 55, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  color: #1B365D;
+}
+
+.impact-icon {
+  width: 16px;
+  height: 16px;
+  color: #D4AF37;
+}
+
+/* Lo and Lady Labs Donation Section */
+.lab-donation-section {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #F5E6D3 0%, #FFFFFF 50%, #F5E6D3 100%);
+  border-bottom: 1px solid goldenrod;
+}
+
+.lab-donation-content {
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.lab-donation-header {
+  margin-bottom: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.lab-donation-icon {
+  width: 64px;
+  height: 64px;
+  color: #D4AF37;
+  margin: 0 auto 2rem auto;
+  display: block;
+}
+
+.lab-donation-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.donation-feature {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 30px rgba(27, 54, 93, 0.1);
+  border: 2px solid #E8EAED;
+  transition: all 0.3s ease;
+  
+}
+
+.donation-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(27, 54, 93, 0.15);
+  border-color: #D4AF37;
+}
+
+.donation-feature .feature-icon {
+  width: 48px;
+  height: 48px;
+  color: #FFFFFF;
+  
+  border: 1px solid rgb(218, 165, 32, 0.5);
+  margin-bottom: 1.5rem;
+}
+
+.donation-feature h3 {
+  font-size: 1.25rem;
+  color: #1B365D;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.donation-feature p {
+  font-size: 1rem;
+  color: #5F6368;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.lab-donation-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.donate-to-lab-button {
+  font-size: 1.125rem;
+  padding: 1.25rem 3rem;
+}
+
+.donation-note {
+  font-size: 0.875rem;
+  color: #5F6368;
+  margin: 0;
+  font-style: italic;
+}
+
+/* External Donation Section */
+.donation-section {
+  padding: 6rem 0;
+  background: #FFFFFF;
+  border-bottom: 1px solid goldenrod;
+}
+
+/* Call to Action Section */
+.support-cta {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #1B365D, #4A90E2);
+  color: #FFFFFF;
+  text-align: center;
+  border-bottom: 1px solid goldenrod;
+  border-top: 2px solid goldenrod;
+}
+
+.support-cta .cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.support-cta .cta-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+}
+
+.support-cta .cta-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  color: #F5E6D3;
+}
+
+.support-cta .cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Button Styles */
+.button-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Animations */
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-stagger-children > * {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .support-hero .hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .support-hero .hero-text {
+    padding-right: 0;
+  }
+  
+  .support-hero .hero-image {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .programs-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .lab-donation-features {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .support-hero {
+    padding: 4rem 0;
+  }
+  
+  .support-hero .hero-stats {
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .support-hero .stat-item {
+    min-width: 100px;
+  }
+  
+  .support-hero .stat-number {
+    font-size: 2rem;
+  }
+  
+  .support-hero .hero-image {
+    height: 350px;
+  }
+  
+  .crisis-resources,
+  .therapy-programs {
+    padding: 4rem 0;
+  }
+  
+  .resources-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .program-card {
+    padding: 2rem;
+  }
+
+  .lab-donation-features {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .donation-feature {
+    padding: 2rem;
+  }
+  
+  .program-icon {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .program-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .support-cta {
+    padding: 4rem 0;
+  }
+  
+  .support-cta .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .support-cta .cta-buttons .btn,
+  .support-cta .cta-buttons .secondary-cta {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .notice-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .support-hero .hero-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .support-hero .stat-item {
+    min-width: auto;
+  }
+  
+  .support-hero .hero-image {
+    height: 300px;
+  }
+  
+  .resource-card,
+  .program-card {
+    padding: 1.5rem;
+  }
+  
+  .resource-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .program-title {
+    font-size: 1.25rem;
+  }
+  
+  .program-description {
+    font-size: 0.875rem;
+  }
+  
+  .emergency-notice {
+    padding: 1.5rem;
+  }
+}
