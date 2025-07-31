@@ -4,17 +4,25 @@
 
 /**
  * Get the correct image path for the current environment
- * @param {string} imagePath - The image path relative to public/images (e.g., "puppies/puppy-1.jpg")
+ * @param {string} imagePath - The image path (e.g., "images/puppies/puppy-1.jpg" or "puppies/puppy-1.jpg")
  * @returns {string} - The correct full path for the current environment
  */
 export const getImagePath = (imagePath) => {
-  // Remove leading slash or dot if present
-  const cleanPath = imagePath.replace(/^(\.\/|\/)?images\//, '')
+  if (!imagePath) return imagePath
   
-  // In production (GitHub Pages), use base URL + images path
-  // In development, use root-relative path
+  // Clean up the path - remove leading slashes/dots and normalize
+  let cleanPath = imagePath.replace(/^(\.\/|\/)+/, '')
+  
+  // If path doesn't start with 'images/', add it
+  if (!cleanPath.startsWith('images/')) {
+    cleanPath = `images/${cleanPath}`
+  }
+  
+  // Get base URL and ensure it ends with /
   const baseUrl = import.meta.env.BASE_URL || '/'
-  return `${baseUrl}images/${cleanPath}`
+  const normalizedBaseUrl = baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`
+  
+  return `${normalizedBaseUrl}${cleanPath}`
 }
 
 /**

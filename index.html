@@ -8,6 +8,17 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // GitHub Pages SPA redirect handler
+      // Check if we were redirected from a 404 page
+      const urlParams = new URLSearchParams(window.location.search);
+      const redirectPath = urlParams.get('p');
+      
+      if (redirectPath) {
+        // Remove the redirect parameter and update the URL
+        window.history.replaceState(null, null, window.location.pathname + redirectPath);
+      }
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
