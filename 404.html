@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Lo and Lady Labs - Redirecting...</title>
+  <script>
+    // GitHub Pages SPA redirect workaround
+    // This script takes the current URL and redirects to the index.html page
+    // with the full URL path stored in a query parameter.
+    // React Router will then handle the routing on the client side.
+    
+    const baseUrl = '/lo-and-lady-labs/';
+    const currentPath = window.location.pathname;
+    
+    // Remove the base URL from the current path to get the relative path
+    const relativePath = currentPath.replace(baseUrl, '');
+    
+    // Redirect to index.html with the path as a query parameter
+    const redirectUrl = baseUrl + '?p=' + encodeURIComponent(relativePath) + window.location.search.slice(1);
+    
+    window.location.replace(redirectUrl);
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
