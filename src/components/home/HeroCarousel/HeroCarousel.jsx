@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, Crown } from 'lucide-react'
 const carouselSlides = [
   {
     id: 1,
-    image: "/images/carousel/hero-slide-1.jpg",
+    image: "./images/carousel/hero-slide-1.jpg",
     title: "Premium Labradoodle Companions",
     subtitle: "Where luxury meets unconditional love",
     cta: "Meet Our Puppies",
@@ -13,7 +13,7 @@ const carouselSlides = [
   },
   {
     id: 2,
-    image: "/images/carousel/hero-slide-2.jpg",
+    image: "./images/carousel/hero-slide-2.jpg",
     title: "Exceptional Breeding Standards",
     subtitle: "Health tested, family raised, lifetime support",
     cta: "Our Process",
@@ -22,7 +22,7 @@ const carouselSlides = [
   },
   {
     id: 3,
-    image: "/images/carousel/hero-slide-3.jpg",
+    image: "./images/carousel/hero-slide-3.jpg",
     title: "Find Your Perfect Match",
     subtitle: "Carefully matched to your family's lifestyle",
     cta: "Start Your Journey",

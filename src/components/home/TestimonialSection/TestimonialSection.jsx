@@ -10,8 +10,8 @@ const testimonials = [
     puppyName: "Bella",
     rating: 5,
     text: "Bella has been the perfect addition to our family! Lo and Lady Labs made the entire process seamless. Their dedication to health testing and socialization really shows - Bella is healthy, happy, and so well-adjusted.",
-    image: "/images/testimonials/family-1.jpg",
-    puppyImage: "/images/testimonials/bella-family.jpg"
+    image: "./images/testimonials/family-1.jpg",
+    puppyImage: "./images/testimonials/bella-family.jpg"
   },
   {
     id: 2,
@@ -20,8 +20,8 @@ const testimonials = [
     puppyName: "Cooper",
     rating: 5,
     text: "Cooper is everything we hoped for and more! He's gentle with our kids, incredibly smart, and has the sweetest temperament. The team was professional and caring throughout the entire adoption process.",
-    image: "/images/testimonials/family-2.jpg",
-    puppyImage: "/images/testimonials/cooper-family.jpg"
+    image: "./images/testimonials/family-2.jpg",
+    puppyImage: "./images/testimonials/cooper-family.jpg"
   },
   {
     id: 3,
@@ -30,8 +30,8 @@ const testimonials = [
     puppyName: "Luna",
     rating: 5,
     text: "We couldn't be happier with Luna! She's brought so much joy to our home. The health guarantees and ongoing support from Lo and Lady Labs gave us complete confidence in our choice.",
-    image: "/images/testimonials/family-3.jpg",
-    puppyImage: "/images/testimonials/luna-family.jpg"
+    image: "./images/testimonials/family-3.jpg",
+    puppyImage: "./images/testimonials/luna-family.jpg"
   }
 ]
 

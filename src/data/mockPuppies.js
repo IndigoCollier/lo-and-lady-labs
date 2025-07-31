@@ -2,11 +2,11 @@ export const mockPuppies = [
   {
     id: 1,
     name: "Luna",
-    image: "/images/puppies/puppy-1.jpg",
+    image: "./images/puppies/puppy-1.jpg",
     galleryImages: [
-      "/images/puppies/puppy-1.jpg",
-      "/images/puppies/puppy-1.jpg", // You can add different angles later
-      "/images/puppies/puppy-1.jpg"
+      "./images/puppies/puppy-1.jpg",
+      "./images/puppies/puppy-1.jpg", // You can add different angles later
+      "./images/puppies/puppy-1.jpg"
     ],
     age: "10 weeks",
     ageInWeeks: 10,
@@ -40,11 +40,11 @@ export const mockPuppies = [
   {
     id: 2,
     name: "Cooper",
-    image: "/images/puppies/puppy-2.jpg",
+    image: "./images/puppies/puppy-2.jpg",
     galleryImages: [
-      "/images/puppies/puppy-2.jpg",
-      "/images/puppies/puppy-2.jpg",
-      "/images/puppies/puppy-2.jpg"
+      "./images/puppies/puppy-2.jpg",
+      "./images/puppies/puppy-2.jpg",
+      "./images/puppies/puppy-2.jpg"
     ],
     age: "9 weeks",
     ageInWeeks: 9,
@@ -78,11 +78,11 @@ export const mockPuppies = [
   {
     id: 3,
     name: "Bella",
-    image: "/images/puppies/puppy-3.jpg",
+    image: "./images/puppies/puppy-3.jpg",
     galleryImages: [
-      "/images/puppies/puppy-3.jpg",
-      "/images/puppies/puppy-3.jpg",
-      "/images/puppies/puppy-3.jpg"
+      "./images/puppies/puppy-3.jpg",
+      "./images/puppies/puppy-3.jpg",
+      "./images/puppies/puppy-3.jpg"
     ],
     age: "8 weeks",
     ageInWeeks: 8,
@@ -116,11 +116,11 @@ export const mockPuppies = [
   {
     id: 4,
     name: "Max",
-    image: "/images/puppies/puppy-4.jpg",
+    image: "./images/puppies/puppy-4.jpg",
     galleryImages: [
-      "/images/puppies/puppy-4.jpg",
-      "/images/puppies/puppy-4.jpg",
-      "/images/puppies/puppy-4.jpg"
+      "./images/puppies/puppy-4.jpg",
+      "./images/puppies/puppy-4.jpg",
+      "./images/puppies/puppy-4.jpg"
     ],
     age: "12 weeks",
     ageInWeeks: 12,
@@ -154,11 +154,11 @@ export const mockPuppies = [
   {
     id: 5,
     name: "Daisy",
-    image: "/images/puppies/puppy-5.jpg",
+    image: "./images/puppies/puppy-5.jpg",
     galleryImages: [
-      "/images/puppies/puppy-5.jpg",
-      "/images/puppies/puppy-5.jpg",
-      "/images/puppies/puppy-5.jpg"
+      "./images/puppies/puppy-5.jpg",
+      "./images/puppies/puppy-5.jpg",
+      "./images/puppies/puppy-5.jpg"
     ],
     age: "9 weeks",
     ageInWeeks: 9,
@@ -192,11 +192,11 @@ export const mockPuppies = [
   {
     id: 6,
     name: "Charlie",
-    image: "/images/puppies/puppy-6.jpg",
+    image: "./images/puppies/puppy-6.jpg",
     galleryImages: [
-      "/images/puppies/puppy-6.jpg",
-      "/images/puppies/puppy-6.jpg",
-      "/images/puppies/puppy-6.jpg"
+      "./images/puppies/puppy-6.jpg",
+      "./images/puppies/puppy-6.jpg",
+      "./images/puppies/puppy-6.jpg"
     ],
     age: "10 weeks",
     ageInWeeks: 10,

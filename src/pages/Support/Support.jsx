@@ -116,7 +116,7 @@ function Support() {
             </div>
             <div className="hero-image">
               <img 
-                src="/images/support/therapy-dog-and-child.png" 
+                src="./images/support/therapy-dog-and-child.png" 
                 alt="Therapy dog providing comfort to a child"
                 className="hero-img"
               />
