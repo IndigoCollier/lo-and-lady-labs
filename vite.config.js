@@ -6,3 +6,4 @@ export default defineConfig({
   base: '/lo-and-lady-labs/',
   plugins: [react()],
 })
+
