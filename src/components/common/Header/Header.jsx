@@ -58,18 +58,14 @@ function Header() {
               console.log('🍔 Hamburger clicked! Current state:', isMenuOpen, 'New state:', !isMenuOpen)
               setIsMenuOpen(prev => !prev)
             }}
-            style={{
-              background: 'none',
-              border: 'none',
-              color: '#1B365D',
-              fontSize: '1.5rem',
-              cursor: 'pointer',
-              padding: '0.5rem',
-              zIndex: 1001
-            }}
             className="mobile-menu-button"
             type="button"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+            style={{
+              color: '#1B365D',
+              fontSize: '1.5rem',
+              padding: '0.5rem'
+            }}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

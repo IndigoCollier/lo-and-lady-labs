@@ -16,11 +16,24 @@ function App() {
     const urlParams = new URLSearchParams(window.location.search)
     const redirectPath = urlParams.get('p')
     
+    console.log('App.jsx - URL params:', window.location.search)
+    console.log('App.jsx - Redirect path:', redirectPath)
+    
     if (redirectPath) {
-      // Remove the query parameter and navigate to the intended path
-      const decodedPath = decodeURIComponent(redirectPath)
-      window.history.replaceState({}, '', window.location.pathname)
-      navigate(decodedPath, { replace: true })
+      // Clean up the path
+      let cleanPath = redirectPath
+      if (cleanPath.startsWith('/')) {
+        cleanPath = cleanPath
+      } else {
+        cleanPath = '/' + cleanPath
+      }
+      
+      console.log('App.jsx - Navigating to:', cleanPath)
+      
+      // Clear the URL and navigate
+      const newUrl = window.location.pathname + window.location.hash
+      window.history.replaceState({}, '', newUrl)
+      navigate(cleanPath, { replace: true })
     }
   }, [navigate])
 

@@ -2,38 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Lo and Lady Labs - Redirecting...</title>
+  <title>Lo and Lady Labs</title>
   <script>
     // GitHub Pages SPA redirect workaround
-    // This script takes the current URL and redirects to the index.html page
-    // with the full URL path stored in a query parameter.
-    // React Router will then handle the routing on the client side.
-    
     const baseUrl = '/lo-and-lady-labs/';
     const currentPath = window.location.pathname;
     
-    // Remove the base URL from the current path to get the relative path
-    let relativePath = currentPath.replace(baseUrl, '');
+    console.log('404.html - Current path:', currentPath);
+    console.log('404.html - Base URL:', baseUrl);
     
-    // Handle case where path doesn't start with base URL (direct access)
-    if (currentPath === relativePath) {
-      relativePath = currentPath.startsWith('/') ? currentPath.slice(1) : currentPath;
+    // Get the path relative to the base URL
+    let relativePath = currentPath;
+    if (currentPath.startsWith(baseUrl)) {
+      relativePath = currentPath.substring(baseUrl.length);
+    } else if (currentPath.startsWith('/')) {
+      relativePath = currentPath.substring(1);
     }
     
-    // Don't redirect if already at root
-    if (relativePath === '' || relativePath === '/') {
+    console.log('404.html - Relative path:', relativePath);
+    
+    // Don't redirect if already at root or empty
+    if (!relativePath || relativePath === '' || relativePath === '/') {
+      console.log('404.html - Redirecting to root');
       window.location.replace(baseUrl);
       return;
     }
     
-    // Redirect to index.html with the path as a query parameter
-    const redirectUrl = baseUrl + '?p=/' + encodeURIComponent(relativePath) + 
-                       (window.location.search ? '&' + window.location.search.slice(1) : '');
+    // Build redirect URL with the path as query parameter
+    const redirectUrl = baseUrl + '?p=/' + relativePath + 
+                       (window.location.search ? '&' + window.location.search.slice(1) : '') +
+                       (window.location.hash || '');
     
+    console.log('404.html - Redirect URL:', redirectUrl);
     window.location.replace(redirectUrl);
   </script>
 </head>
 <body>
-  <p>Redirecting...</p>
+  <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+    <h2>Loading...</h2>
+    <p>Redirecting to your page...</p>
+  </div>
 </body>
 </html>
