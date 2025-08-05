@@ -176,11 +176,12 @@ p.section-subtitle {
   /* Show mobile menu button */
   .mobile-menu-button {
     display: block !important;
-    z-index: 1000;
+    z-index: 1001 !important;
     position: absolute !important;
     right: 1rem !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
+    pointer-events: auto !important;
   }
   
   /* Ensure mobile nav is shown when active */

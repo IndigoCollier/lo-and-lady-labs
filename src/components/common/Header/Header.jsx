@@ -54,11 +54,9 @@ function Header() {
           
           {/* Mobile Menu Button */}
           <button
-            onClick={(e) => {
-              e.preventDefault()
-              e.stopPropagation()
-              console.log('Hamburger clicked, current state:', isMenuOpen)
-              setIsMenuOpen(!isMenuOpen)
+            onClick={() => {
+              console.log('🍔 Hamburger clicked! Current state:', isMenuOpen, 'New state:', !isMenuOpen)
+              setIsMenuOpen(prev => !prev)
             }}
             style={{
               background: 'none',
@@ -70,6 +68,8 @@ function Header() {
               zIndex: 1001
             }}
             className="mobile-menu-button"
+            type="button"
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
