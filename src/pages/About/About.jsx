@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Heart, Award, Users, Shield, Phone, MessageSquare, ExternalLink } from 'lucide-react'
 import TestimonialSection from '../../components/home/TestimonialSection'
 import AdoptionProcess from '../../components/about/AdoptionProcess'
@@ -11,6 +12,7 @@ import { getImagePath } from '../../utils/imageHelpers'
 import './About.css'
 
 function About() {
+  const navigate = useNavigate()
   const adoptionSteps = getAdoptionSteps()
   const teamMembers = getTeamMembers()
   const breedingPhilosophy = getBreedingPhilosophy()
@@ -205,7 +207,7 @@ function About() {
                     <Button
                       variant="outline"
                       size="medium"
-                      onClick={() => window.location.href = '/support'}
+                      onClick={() => navigate('/support')}
                       className="support-page-link"
                     >
                       <ExternalLink className="button-icon" />
@@ -241,10 +243,10 @@ function About() {
               Our team is here to guide you through every step of the journey.
             </p>
             <div className="cta-buttons">
-              <Button variant="primary" size="large" onClick={() => window.location.href = '/puppies'}>
+              <Button variant="primary" size="large" onClick={() => navigate('/puppies')}>
                 View Available Puppies
               </Button>
-              <Button variant="secondary" size="large" onClick={() => window.location.href = '/contact'}>
+              <Button variant="secondary" size="large" onClick={() => navigate('/contact')}>
                 Contact Us Today
               </Button>
             </div>

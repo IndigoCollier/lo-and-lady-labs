@@ -30,7 +30,7 @@ class ErrorBoundary extends React.Component {
   }
 
   handleGoHome = () => {
-    window.location.href = '/'
+    window.location.href = '/lo-and-lady-labs/'
   }
 
   render() {

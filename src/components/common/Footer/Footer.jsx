@@ -11,10 +11,11 @@ function Footer() {
       <div className="container">
         <div style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
           gap: '3rem',
           padding: '4rem 0 2rem'
-        }}>
+        }}
+        className="footer-content">
           {/* Brand Section */}
           <div>
             <div style={{

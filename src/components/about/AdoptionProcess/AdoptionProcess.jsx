@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { 
   MessageCircle, 
   FileText, 
@@ -108,12 +109,12 @@ function AdoptionProcess({ steps }) {
             We're committed to finding the perfect match for your family.
           </p>
           <div className="footer-actions">
-            <a href="/contact" className="cta-button primary">
+            <Link to="/contact" className="cta-button primary">
               Start Your Application
-            </a>
-            <a href="/puppies" className="cta-button secondary">
+            </Link>
+            <Link to="/puppies" className="cta-button secondary">
               View Available Puppies
-            </a>
+            </Link>
           </div>
         </div>
       </div>

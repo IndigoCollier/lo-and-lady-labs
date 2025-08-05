@@ -11,20 +11,34 @@ export const smoothScrollTo = (elementId, offset = 0) => {
   })
 }
 
-export const handleCTAClick = (action, data = {}) => {
+// Note: This function now requires navigate to be passed in from components using useNavigate()
+export const handleCTAClick = (action, data = {}, navigate = null) => {
   switch (action) {
     case 'viewPuppies':
-      window.location.href = '/puppies'
+      if (navigate) {
+        navigate('/puppies')
+      } else {
+        window.location.href = '/lo-and-lady-labs/puppies'
+      }
       break
     case 'contact':
-      window.location.href = '/contact'
+      if (navigate) {
+        navigate('/contact')
+      } else {
+        window.location.href = '/lo-and-lady-labs/contact'
+      }
       break
-    case 'search':
+    case 'search': {
       const searchParams = new URLSearchParams()
       if (data.term) searchParams.set('search', data.term)
       if (data.filter) searchParams.set('filter', data.filter)
-      window.location.href = `/puppies?${searchParams.toString()}`
+      if (navigate) {
+        navigate(`/puppies?${searchParams.toString()}`)
+      } else {
+        window.location.href = `/lo-and-lady-labs/puppies?${searchParams.toString()}`
+      }
       break
+    }
     case 'scrollTo':
       smoothScrollTo(data.elementId, data.offset || 80)
       break

@@ -51,8 +51,25 @@ function Header() {
             </span>
           </Link>
           
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            style={{
+              display: 'none',
+              background: 'none',
+              border: 'none',
+              color: '#1B365D',
+              fontSize: '1.5rem',
+              cursor: 'pointer',
+              padding: '0.5rem'
+            }}
+            className="mobile-menu-button"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+          
           {/* Desktop Navigation */}
-          <nav style={{ display: 'flex', gap: '3rem' }}>
+          <nav style={{ display: 'flex', gap: '3rem' }} className="desktop-nav">
             <Link 
               to="/" 
               style={{
@@ -130,6 +147,99 @@ function Header() {
             </Link>
           </nav>
         </div>
+        
+        {/* Mobile Navigation */}
+        <nav 
+          style={{
+            display: isMenuOpen ? 'flex' : 'none',
+            flexDirection: 'column',
+            gap: '1rem',
+            padding: '1rem 0 2rem',
+            borderTop: '1px solid #F5E6D3'
+          }}
+          className="mobile-nav"
+        >
+          <Link 
+            to="/" 
+            onClick={() => setIsMenuOpen(false)}
+            style={{
+              textDecoration: 'none',
+              color: isActive('/') ? '#D4AF37' : '#1B365D',
+              fontWeight: '600',
+              padding: '0.75rem 0',
+              borderBottom: isActive('/') ? '2px solid #D4AF37' : '2px solid transparent',
+              transition: 'all 0.3s ease',
+              fontSize: '1rem',
+              letterSpacing: '0.025em'
+            }}
+          >
+            Home
+          </Link>
+          <Link 
+            to="/puppies" 
+            onClick={() => setIsMenuOpen(false)}
+            style={{
+              textDecoration: 'none',
+              color: isActive('/puppies') ? '#D4AF37' : '#1B365D',
+              fontWeight: '600',
+              padding: '0.75rem 0',
+              borderBottom: isActive('/puppies') ? '2px solid #D4AF37' : '2px solid transparent',
+              transition: 'all 0.3s ease',
+              fontSize: '1rem',
+              letterSpacing: '0.025em'
+            }}
+          >
+            Find Labradoodles
+          </Link>
+          <Link 
+            to="/about" 
+            onClick={() => setIsMenuOpen(false)}
+            style={{
+              textDecoration: 'none',
+              color: isActive('/about') ? '#D4AF37' : '#1B365D',
+              fontWeight: '600',
+              padding: '0.75rem 0',
+              borderBottom: isActive('/about') ? '2px solid #D4AF37' : '2px solid transparent',
+              transition: 'all 0.3s ease',
+              fontSize: '1rem',
+              letterSpacing: '0.025em'
+            }}
+          >
+            About Us
+          </Link>
+          <Link 
+            to="/support" 
+            onClick={() => setIsMenuOpen(false)}
+            style={{
+              textDecoration: 'none',
+              color: isActive('/support') ? '#D4AF37' : '#1B365D',
+              fontWeight: '600',
+              padding: '0.75rem 0',
+              borderBottom: isActive('/support') ? '2px solid #D4AF37' : '2px solid transparent',
+              transition: 'all 0.3s ease',
+              fontSize: '1rem',
+              letterSpacing: '0.025em'
+            }}
+          >
+            Support
+          </Link>
+          <Link 
+            to="/contact" 
+            onClick={() => setIsMenuOpen(false)}
+            style={{
+              textDecoration: 'none',
+              color: isActive('/contact') ? '#D4AF37' : '#1B365D',
+              fontWeight: '600',
+              padding: '0.75rem 0',
+              borderBottom: isActive('/contact') ? '2px solid #D4AF37' : '2px solid transparent',
+              transition: 'all 0.3s ease',
+              fontSize: '1rem',
+              letterSpacing: '0.025em'
+            }}
+          >
+            Contact
+          </Link>
+        </nav>
       </div>
     </header>
   )

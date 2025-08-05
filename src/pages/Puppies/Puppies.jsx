@@ -122,20 +122,22 @@ function Puppies() {
                    puppy.personality.some(trait => trait.toLowerCase().includes(mappedSearch.value))
           case 'availability':
             return mappedSearch.value === 'available' ? puppy.available : !puppy.available
-          case 'age':
+          case 'age': {
             const ageInWeeks = puppy.ageInWeeks || parseInt(puppy.age)
             switch (mappedSearch.value) {
               case 'under-8': return ageInWeeks < 8
               case 'over-10': return ageInWeeks > 10
               default: return true
             }
-          case 'price':
+          }
+          case 'price': {
             const price = puppy.price
             switch (mappedSearch.value) {
               case 'under-2500': return price < 2500
               case 'over-3000': return price > 3000
               default: return true
             }
+          }
           default:
             return false
         }

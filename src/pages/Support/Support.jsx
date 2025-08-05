@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Heart, Users, Phone, MessageCircle, ExternalLink, Shield, Award, Star } from 'lucide-react'
 import DonationWidget from '../../components/common/DonationWidget'
 import DonationModal from '../../components/common/DonationModal'
@@ -73,6 +74,7 @@ const therapyDogPrograms = [
 ]
 
 function Support() {
+  const navigate = useNavigate()
   const [isDonationModalOpen, setIsDonationModalOpen] = useState(false)
 
   const handleCallResource = (phone) => {
@@ -284,7 +286,7 @@ function Support() {
               <Button 
                 variant="primary" 
                 size="large"
-                onClick={() => window.location.href = '/contact'}
+                onClick={() => navigate('/contact')}
                 className="btn-hover-glow"
               >
                 Contact Us About Programs
@@ -292,7 +294,7 @@ function Support() {
               <Button 
                 variant="outline" 
                 size="large"
-                onClick={() => window.location.href = '/about'}
+                onClick={() => navigate('/about')}
                 className="secondary-cta"
               >
                 Learn About Our Mission

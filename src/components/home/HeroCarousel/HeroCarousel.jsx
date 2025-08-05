@@ -1,5 +1,6 @@
   import React, { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight, Crown } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import { getImagePath } from '../../../utils/imageHelpers'
 
 const carouselSlides = [
@@ -35,6 +36,7 @@ const carouselSlides = [
 function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (!isAutoPlaying) return
@@ -171,7 +173,7 @@ function HeroCarousel() {
             letterSpacing: '0.025em',
             boxShadow: '0 8px 25px rgba(212, 175, 55, 0.4)'
           }}
-          onClick={() => window.location.href = currentSlideData.ctaLink}
+          onClick={() => navigate(currentSlideData.ctaLink)}
           onMouseOver={(e) => {
             e.target.style.transform = 'translateY(-3px)'
             e.target.style.boxShadow = '0 12px 35px rgba(212, 175, 55, 0.5)'

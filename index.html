@@ -11,13 +11,18 @@
     <script>
       // GitHub Pages SPA redirect handler
       // Check if we were redirected from a 404 page
-      const urlParams = new URLSearchParams(window.location.search);
-      const redirectPath = urlParams.get('p');
-      
-      if (redirectPath) {
-        // Remove the redirect parameter and update the URL
-        window.history.replaceState(null, null, window.location.pathname + redirectPath);
-      }
+      (function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectPath = urlParams.get('p');
+        
+        if (redirectPath) {
+          // Remove the redirect parameter and update the URL
+          const newUrl = window.location.pathname + redirectPath + 
+                        (urlParams.toString().replace('p=' + encodeURIComponent(redirectPath), '').replace(/^&/, '') ? 
+                         '?' + urlParams.toString().replace('p=' + encodeURIComponent(redirectPath), '').replace(/^&/, '') : '');
+          window.history.replaceState(null, null, newUrl);
+        }
+      })();
     </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
