@@ -155,14 +155,10 @@ function Header() {
         
         {/* Mobile Navigation */}
         <nav 
-          style={{
-            display: isMenuOpen ? 'flex' : 'none',
-            flexDirection: 'column',
-            gap: '1rem',
-            padding: '1rem 0 2rem',
-            borderTop: '1px solid #F5E6D3'
-          }}
           className="mobile-nav"
+          style={{
+            display: isMenuOpen ? 'flex' : 'none'
+          }}
         >
           <Link 
             to="/" 

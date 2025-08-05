@@ -193,14 +193,14 @@ p.section-subtitle {
     margin-left: auto !important;
   }
   
-  /* Ensure mobile nav works properly */
+  /* Mobile nav base styles - don't force display */
   .mobile-nav {
-    display: flex !important;
     flex-direction: column !important;
     width: 100% !important;
     background: white !important;
-    padding: 1rem 0 !important;
+    padding: 1rem 0 2rem !important;
     border-top: 1px solid #F5E6D3 !important;
+    gap: 1rem !important;
   }
 }
 
