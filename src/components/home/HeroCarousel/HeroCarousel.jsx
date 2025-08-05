@@ -173,7 +173,24 @@ function HeroCarousel() {
             letterSpacing: '0.025em',
             boxShadow: '0 8px 25px rgba(212, 175, 55, 0.4)'
           }}
-          onClick={() => navigate(currentSlideData.ctaLink)}
+          onClick={(e) => {
+            e.preventDefault()
+            console.log('Navigating to:', currentSlideData.ctaLink)
+            
+            // Try React Router navigation first
+            if (navigate && typeof navigate === 'function') {
+              try {
+                navigate(currentSlideData.ctaLink)
+                return
+              } catch (error) {
+                console.error('Navigate failed:', error)
+              }
+            }
+            
+            // Fallback to direct navigation with base path
+            console.log('Using fallback navigation')
+            window.location.href = `/lo-and-lady-labs${currentSlideData.ctaLink}`
+          }}
           onMouseOver={(e) => {
             e.target.style.transform = 'translateY(-3px)'
             e.target.style.boxShadow = '0 12px 35px rgba(212, 175, 55, 0.5)'
