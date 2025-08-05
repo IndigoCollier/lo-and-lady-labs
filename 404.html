@@ -4,43 +4,14 @@
   <meta charset="utf-8" />
   <title>Lo and Lady Labs</title>
   <script>
-    // GitHub Pages SPA redirect workaround
-    const baseUrl = '/lo-and-lady-labs/';
-    const currentPath = window.location.pathname;
-    
-    console.log('404.html - Current path:', currentPath);
-    console.log('404.html - Base URL:', baseUrl);
-    
-    // Get the path relative to the base URL
-    let relativePath = currentPath;
-    if (currentPath.startsWith(baseUrl)) {
-      relativePath = currentPath.substring(baseUrl.length);
-    } else if (currentPath.startsWith('/')) {
-      relativePath = currentPath.substring(1);
-    }
-    
-    console.log('404.html - Relative path:', relativePath);
-    
-    // Don't redirect if already at root or empty
-    if (!relativePath || relativePath === '' || relativePath === '/') {
-      console.log('404.html - Redirecting to root');
-      window.location.replace(baseUrl);
-      return;
-    }
-    
-    // Build redirect URL with the path as query parameter
-    const redirectUrl = baseUrl + '?p=/' + relativePath + 
-                       (window.location.search ? '&' + window.location.search.slice(1) : '') +
-                       (window.location.hash || '');
-    
-    console.log('404.html - Redirect URL:', redirectUrl);
-    window.location.replace(redirectUrl);
+    // Simple redirect to home page for GitHub Pages SPA
+    window.location.replace('/lo-and-lady-labs/');
   </script>
 </head>
 <body>
   <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
-    <h2>Loading...</h2>
-    <p>Redirecting to your page...</p>
+    <h2>Redirecting...</h2>
+    <p>Taking you to the home page...</p>
   </div>
 </body>
 </html>
