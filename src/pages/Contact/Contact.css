@@ -99,16 +99,18 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  
 }
 
 .methods-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 2.5rem;
   max-width: 1200px;
   width: 100%;
   padding: 0 2rem;
-  justify-items: center;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .contact-card {
@@ -118,9 +120,9 @@
   box-shadow: 0 8px 30px rgba(27, 54, 93, 0.1);
   transition: all 0.3s ease;
   min-width: 320px;
-  width: 100%;
+  max-width: 380px;
+  flex: 0 1 320px;
   padding: 1.25rem 1.65rem;
-
 }
 
 .contact-card:hover {
@@ -431,10 +433,17 @@
 /* Responsive Design */
 @media (max-width: 900px) {
   .methods-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
     max-width: 600px;
     gap: 1.5rem;
     padding: 0 1rem;
+  }
+  
+  .contact-card {
+    max-width: 100%;
+    flex: none;
+    width: 100%;
   }
   
   .contact-tabs {
