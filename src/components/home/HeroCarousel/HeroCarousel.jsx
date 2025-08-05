@@ -175,21 +175,15 @@ function HeroCarousel() {
           }}
           onClick={(e) => {
             e.preventDefault()
-            console.log('Navigating to:', currentSlideData.ctaLink)
+            e.stopPropagation()
             
-            // Try React Router navigation first
-            if (navigate && typeof navigate === 'function') {
-              try {
-                navigate(currentSlideData.ctaLink)
-                return
-              } catch (error) {
-                console.error('Navigate failed:', error)
-              }
-            }
+            console.log('Hero carousel button clicked, navigating to:', currentSlideData.ctaLink)
             
-            // Fallback to direct navigation with base path
-            console.log('Using fallback navigation')
-            window.location.href = `/lo-and-lady-labs${currentSlideData.ctaLink}`
+            // Use direct navigation with full URL to ensure it works
+            const fullUrl = `https://indigocollier.github.io/lo-and-lady-labs${currentSlideData.ctaLink}`
+            console.log('Full URL:', fullUrl)
+            
+            window.location.href = fullUrl
           }}
           onMouseOver={(e) => {
             e.target.style.transform = 'translateY(-3px)'
