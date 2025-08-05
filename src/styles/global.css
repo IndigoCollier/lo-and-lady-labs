@@ -132,6 +132,10 @@ p.section-subtitle {
   
   .mobile-menu-button {
     display: block !important;
+    position: absolute !important;
+    right: 1rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
   }
   
   /* Force container to stay within viewport */
@@ -153,6 +157,13 @@ p.section-subtitle {
   }
 }
 
+/* Hide mobile menu button by default on desktop */
+@media (min-width: 901px) {
+  .mobile-menu-button {
+    display: none !important;
+  }
+}
+
 /* More aggressive mobile navigation hiding */
 @media (max-width: 900px) {
   /* Force hide all desktop navigation items */
@@ -164,6 +175,10 @@ p.section-subtitle {
   .mobile-menu-button {
     display: block !important;
     z-index: 1000;
+    position: absolute !important;
+    right: 1rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
   }
   
   /* Ensure mobile nav is shown when active */
@@ -185,6 +200,10 @@ p.section-subtitle {
   
   .mobile-menu-button {
     display: block !important;
+    position: absolute !important;
+    right: 1rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
   }
   
   /* Force logo to not take up too much space */

@@ -103,7 +103,7 @@
 
 .methods-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2.5rem;
   max-width: 1200px;
   width: 100%;
@@ -429,7 +429,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: 900px) {
   .methods-grid {
     grid-template-columns: 1fr;
     max-width: 600px;

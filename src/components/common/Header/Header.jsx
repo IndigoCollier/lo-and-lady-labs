@@ -22,7 +22,8 @@ function Header() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          padding: '1.5rem 0'
+          padding: '1.5rem 0',
+          position: 'relative'
         }}>
           {/* Logo */}
           <Link to="/" style={{
