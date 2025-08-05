@@ -1,6 +1,15 @@
 .adoption-process {
   padding: 4rem 0;
   background: linear-gradient(135deg, #F5E6D3 0%, #FFFFFF 50%, #F5E6D3 100%);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.adoption-process .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .process-header {
@@ -331,6 +340,10 @@
     padding: 3rem 0;
   }
   
+  .adoption-process .container {
+    padding: 0 1rem;
+  }
+  
   .process-header {
     margin-bottom: 3rem;
   }
@@ -378,5 +391,15 @@
     width: 100%;
     max-width: 300px;
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .adoption-process .container {
+    padding: 0 0.5rem;
+  }
+  
+  .process-timeline {
+    max-width: 100%;
   }
 }

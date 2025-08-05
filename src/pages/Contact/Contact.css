@@ -431,8 +431,8 @@
   background: #FFFFFF;
 }
 
-/* Responsive Design */
-@media (max-width: 900px) {
+/* Keep row layout on desktop and switch to column only on tablet/mobile */
+@media (max-width: 768px) {
   .methods-grid {
     flex-direction: column;
     align-items: center;

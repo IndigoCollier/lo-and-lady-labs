@@ -531,12 +531,20 @@
   
   .support-hero .hero-image {
     height: 350px;
-    margin: 0 1rem;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
   }
   
   .crisis-resources,
   .therapy-programs {
     padding: 4rem 0;
+  }
+  
+  .crisis-resources .container,
+  .therapy-programs .container,
+  .support-cta .container {
+    padding: 0 1rem;
   }
   
   .resources-grid {
@@ -608,13 +616,20 @@
   }
   
   .support-hero .hero-image {
-    height: 300px;
-    margin: 0 0.5rem;
+    height: 250px;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .crisis-resources .container,
+  .therapy-programs .container {
+    padding: 0 0.5rem;
   }
   
   .resource-card,
   .program-card {
     padding: 1.5rem;
+    margin: 0;
   }
   
   .resource-header {
