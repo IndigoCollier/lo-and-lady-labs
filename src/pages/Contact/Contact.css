@@ -103,11 +103,12 @@
 
 .methods-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2.5rem;
   max-width: 1200px;
   width: 100%;
   padding: 0 2rem;
+  justify-items: center;
 }
 
 .contact-card {

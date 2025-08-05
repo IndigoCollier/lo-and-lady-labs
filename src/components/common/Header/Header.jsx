@@ -55,7 +55,6 @@ function Header() {
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             style={{
-              display: 'none',
               background: 'none',
               border: 'none',
               color: '#1B365D',
