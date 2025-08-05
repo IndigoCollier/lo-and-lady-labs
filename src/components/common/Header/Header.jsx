@@ -8,6 +8,9 @@ function Header() {
   
   const isActive = (path) => location.pathname === path
   
+  // Debug logging
+  console.log('🎯 Header render - isMenuOpen:', isMenuOpen, 'Screen width:', window.innerWidth)
+  
   return (
     <header style={{
       backgroundColor: '#FFFFFF',
