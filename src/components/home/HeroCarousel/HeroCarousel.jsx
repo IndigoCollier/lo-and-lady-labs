@@ -177,13 +177,15 @@ function HeroCarousel() {
             e.preventDefault()
             e.stopPropagation()
             
-            console.log('Hero carousel button clicked, navigating to:', currentSlideData.ctaLink)
+            console.log('🚀 UPDATED CAROUSEL - Button clicked, navigating to:', currentSlideData.ctaLink)
             
             // Use direct navigation with full URL to ensure it works
             const fullUrl = `https://indigocollier.github.io/lo-and-lady-labs${currentSlideData.ctaLink}`
-            console.log('Full URL:', fullUrl)
+            console.log('🎯 Full URL:', fullUrl)
+            console.log('🕐 Timestamp:', new Date().toISOString())
             
-            window.location.href = fullUrl
+            // Force navigation
+            window.location.replace(fullUrl)
           }}
           onMouseOver={(e) => {
             e.target.style.transform = 'translateY(-3px)'
