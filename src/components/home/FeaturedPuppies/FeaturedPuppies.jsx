@@ -1,13 +1,16 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Crown, Heart, Star, Calendar, Award } from 'lucide-react'
+import { Crown, Star, Calendar, Award } from 'lucide-react'
 import Button from '../../common/Button'
+import FavoriteButton from '../../puppies/FavoriteButton'
 import { getFeaturedPuppies, formatPrice } from '../../../data/mockPuppies'
 import { getImagePath } from '../../../utils/imageHelpers'
+import { useFavorites } from '../../../hooks/useFavorites'
 import './FeaturedPuppies.css'
 
 function FeaturedPuppies() {
   const navigate = useNavigate()
+  const { toggleFavorite, isFavorite } = useFavorites()
   const featuredPuppies = getFeaturedPuppies(3)
 
   // Navigate to individual puppy detail page
@@ -18,6 +21,11 @@ function FeaturedPuppies() {
   // Navigate to main puppies page
   const handleViewAllPuppies = () => {
     navigate('/puppies')
+  }
+
+  // Handle favorite toggle
+  const handleFavoriteClick = (puppyId) => {
+    toggleFavorite(puppyId)
   }
 
   return (
@@ -48,9 +56,12 @@ function FeaturedPuppies() {
                   Available
                 </div>
                 
-                <button className="heart-button">
-                  <Heart className="heart-icon" />
-                </button>
+                <FavoriteButton
+                  isActive={isFavorite(puppy.id)}
+                  onClick={() => handleFavoriteClick(puppy.id)}
+                  puppyName={puppy.name}
+                  size="medium"
+                />
               </div>
 
               <div className="puppy-info">
