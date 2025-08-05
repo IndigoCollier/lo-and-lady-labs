@@ -136,6 +136,8 @@ p.section-subtitle {
     right: 1rem !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
+    z-index: 1001 !important;
+    pointer-events: auto !important;
   }
   
   /* Force container to stay within viewport */
@@ -204,6 +206,8 @@ p.section-subtitle {
     right: 1rem !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
+    z-index: 1001 !important;
+    pointer-events: auto !important;
   }
   
   /* Force logo to not take up too much space */

@@ -54,14 +54,20 @@ function Header() {
           
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              console.log('Hamburger clicked, current state:', isMenuOpen)
+              setIsMenuOpen(!isMenuOpen)
+            }}
             style={{
               background: 'none',
               border: 'none',
               color: '#1B365D',
               fontSize: '1.5rem',
               cursor: 'pointer',
-              padding: '0.5rem'
+              padding: '0.5rem',
+              zIndex: 1001
             }}
             className="mobile-menu-button"
           >
