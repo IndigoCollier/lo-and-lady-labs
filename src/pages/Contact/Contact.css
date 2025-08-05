@@ -357,7 +357,8 @@
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 8px 30px rgba(27, 54, 93, 0.1);
-  min-width: 750px;
+  width: 100%;
+  max-width: 750px;
 }
 
 .contact-form-subtitle {
@@ -476,6 +477,8 @@
   
   .form-container {
     padding: 1.5rem;
+    max-width: 100%;
+    margin: 0 1rem;
   }
   
   .social-links {
@@ -535,5 +538,11 @@
   
   .social-header p {
     font-size: 1rem;
+  }
+  
+  .form-container {
+    margin: 0 0.5rem;
+    padding: 1rem;
+    max-width: calc(100vw - 1rem);
   }
 }
