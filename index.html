@@ -5,21 +5,26 @@
     <link rel="icon" type="image/svg+xml" href="/lo-and-lady-labs/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lo and Lady Labs</title>
-    <script type="module" crossorigin src="/lo-and-lady-labs/assets/index-BZspJyqf.js"></script>
-    <link rel="stylesheet" crossorigin href="/lo-and-lady-labs/assets/index-BvyTqh23.css">
+    <script type="module" crossorigin src="/lo-and-lady-labs/assets/index-BGzVO0_s.js"></script>
+    <link rel="stylesheet" crossorigin href="/lo-and-lady-labs/assets/index-vVQXax2v.css">
   </head>
   <body>
     <div id="root"></div>
     <script>
       // GitHub Pages SPA redirect handler
       // Check if we were redirected from a 404 page
-      const urlParams = new URLSearchParams(window.location.search);
-      const redirectPath = urlParams.get('p');
-      
-      if (redirectPath) {
-        // Remove the redirect parameter and update the URL
-        window.history.replaceState(null, null, window.location.pathname + redirectPath);
-      }
+      (function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectPath = urlParams.get('p');
+        
+        if (redirectPath) {
+          // Remove the redirect parameter and update the URL
+          const newUrl = window.location.pathname + redirectPath + 
+                        (urlParams.toString().replace('p=' + encodeURIComponent(redirectPath), '').replace(/^&/, '') ? 
+                         '?' + urlParams.toString().replace('p=' + encodeURIComponent(redirectPath), '').replace(/^&/, '') : '');
+          window.history.replaceState(null, null, newUrl);
+        }
+      })();
     </script>
   </body>
 </html>

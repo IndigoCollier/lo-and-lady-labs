@@ -13,10 +13,22 @@
     const currentPath = window.location.pathname;
     
     // Remove the base URL from the current path to get the relative path
-    const relativePath = currentPath.replace(baseUrl, '');
+    let relativePath = currentPath.replace(baseUrl, '');
+    
+    // Handle case where path doesn't start with base URL (direct access)
+    if (currentPath === relativePath) {
+      relativePath = currentPath.startsWith('/') ? currentPath.slice(1) : currentPath;
+    }
+    
+    // Don't redirect if already at root
+    if (relativePath === '' || relativePath === '/') {
+      window.location.replace(baseUrl);
+      return;
+    }
     
     // Redirect to index.html with the path as a query parameter
-    const redirectUrl = baseUrl + '?p=' + encodeURIComponent(relativePath) + window.location.search.slice(1);
+    const redirectUrl = baseUrl + '?p=/' + encodeURIComponent(relativePath) + 
+                       (window.location.search ? '&' + window.location.search.slice(1) : '');
     
     window.location.replace(redirectUrl);
   </script>
