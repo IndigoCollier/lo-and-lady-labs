@@ -100,6 +100,7 @@
   display: flex;
   justify-content: center;
   
+ 
 }
 
 .methods-grid {
@@ -132,7 +133,7 @@
 
 .card-header {
   background: linear-gradient(135deg, #1B365D, #4A90E2);
-  color: #FFFFFF ;
+  color: #FFFFFF;
   padding: 1.5rem;
   display: flex;
   align-items: center;

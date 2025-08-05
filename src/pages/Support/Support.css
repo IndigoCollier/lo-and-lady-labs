@@ -1,6 +1,14 @@
 /* Support Page Styles - Maintaining existing design system */
 .support-page {
   min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Prevent content bleeding on mobile */
+.support-page * {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Hero Section */
@@ -504,6 +512,10 @@
     padding: 4rem 0;
   }
   
+  .support-hero .container {
+    padding: 0 1rem;
+  }
+  
   .support-hero .hero-stats {
     justify-content: center;
     gap: 1rem;
@@ -519,6 +531,7 @@
   
   .support-hero .hero-image {
     height: 350px;
+    margin: 0 1rem;
   }
   
   .crisis-resources,
@@ -581,6 +594,10 @@
 }
 
 @media (max-width: 480px) {
+  .support-hero .container {
+    padding: 0 0.5rem;
+  }
+  
   .support-hero .hero-stats {
     flex-direction: column;
     gap: 1.5rem;
@@ -592,6 +609,7 @@
   
   .support-hero .hero-image {
     height: 300px;
+    margin: 0 0.5rem;
   }
   
   .resource-card,
