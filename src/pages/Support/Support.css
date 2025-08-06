@@ -479,6 +479,37 @@
   transform: translateY(-4px);
 }
 
+/* FORCE MOBILE LAYOUT - High Specificity */
+@media screen and (max-width: 767px) {
+  .crisis-resources .container .resources-grid {
+    display: block !important;
+    grid-template-columns: none !important;
+    width: 100% !important;
+  }
+  
+  .crisis-resources .container .resources-grid .resource-card {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1.5rem !important;
+    box-sizing: border-box !important;
+  }
+  
+  .therapy-programs .container .programs-grid {
+    display: block !important;
+    grid-template-columns: none !important;
+    width: 100% !important;
+  }
+  
+  .therapy-programs .container .programs-grid .program-card {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 2rem !important;
+    box-sizing: border-box !important;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .support-hero .hero-content {
