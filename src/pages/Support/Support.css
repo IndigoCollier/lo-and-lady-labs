@@ -1,4 +1,4 @@
-/* Support Page Styles - Maintaining existing design system */
+/* Support Page Styles - Clean Mobile-First Approach */
 .support-page {
   min-height: 100vh;
   overflow-x: hidden;
@@ -106,8 +106,6 @@
   margin-bottom: 4rem;
 }
 
-
-
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
   color: #1B365D;
@@ -123,6 +121,7 @@
   line-height: 1.6;
 }
 
+/* CLEAN MOBILE-FIRST GRID LAYOUTS */
 .resources-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -349,7 +348,6 @@
   box-shadow: 0 8px 30px rgba(27, 54, 93, 0.1);
   border: 2px solid #E8EAED;
   transition: all 0.3s ease;
-  
 }
 
 .donation-feature:hover {
@@ -362,7 +360,6 @@
   width: 48px;
   height: 48px;
   color: #FFFFFF;
-  
   border: 1px solid rgb(218, 165, 32, 0.5);
   margin-bottom: 1.5rem;
 }
@@ -479,38 +476,7 @@
   transform: translateY(-4px);
 }
 
-/* FORCE MOBILE LAYOUT - High Specificity */
-@media screen and (max-width: 767px) {
-  .crisis-resources .container .resources-grid {
-    display: block !important;
-    grid-template-columns: none !important;
-    width: 100% !important;
-  }
-  
-  .crisis-resources .container .resources-grid .resource-card {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 1.5rem !important;
-    box-sizing: border-box !important;
-  }
-  
-  .therapy-programs .container .programs-grid {
-    display: block !important;
-    grid-template-columns: none !important;
-    width: 100% !important;
-  }
-  
-  .therapy-programs .container .programs-grid .program-card {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    margin-bottom: 2rem !important;
-    box-sizing: border-box !important;
-  }
-}
-
-/* Responsive Design */
+/* CLEAN RESPONSIVE DESIGN - NO CONFLICTS */
 @media (max-width: 1024px) {
   .support-hero .hero-content {
     grid-template-columns: 1fr;
@@ -580,33 +546,17 @@
     overflow-x: hidden;
   }
   
-  .resources-grid {
-    grid-template-columns: 1fr !important;
-    display: flex !important;
-    flex-direction: column;
+  /* MOBILE SINGLE COLUMN - FINAL FIX */
+  .resources-grid,
+  .programs-grid {
+    grid-template-columns: 1fr;
     gap: 1.5rem;
-    width: 100%;
   }
   
-  .resource-card {
+  .resource-card,
+  .program-card {
     padding: 1.5rem;
     margin: 0;
-    width: 100%;
-    max-width: 100%;
-  }
-  
-  .programs-grid {
-    grid-template-columns: 1fr !important;
-    display: flex !important;
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-  }
-  
-  .program-card {
-    padding: 2rem;
-    width: 100%;
-    max-width: 100%;
   }
 
   .lab-donation-features {
@@ -679,10 +629,7 @@
   
   .resources-grid,
   .programs-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
   
@@ -690,8 +637,6 @@
   .program-card {
     padding: 1.5rem;
     margin: 0;
-    width: 100% !important;
-    max-width: 100% !important;
   }
   
   .resource-header {
